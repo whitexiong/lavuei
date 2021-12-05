@@ -2,10 +2,7 @@
   <app-layout title="Dashboard">
     <template #header>
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        用户列表
-        <inertia-link :href="route('users.create')" class="float-right">
-          <jet-button>创建用户</jet-button>
-        </inertia-link>
+        Tag index
       </h2>
     </template>
 
@@ -21,24 +18,25 @@
                   <tr>
                     <th scope="col"
                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      名称
+                      Name
                     </th>
                     <th scope="col"
                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      邮件
+                      type
                     </th>
                     <th scope="col"
                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      角色
+                      Status
                     </th>
-                    <th scope="col"
-                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      操作
+
+                    <th scope="col" class="relative px-6 py-3">
+                      <span class="sr-only">Edit</span>
                     </th>
                   </tr>
+
                   </thead>
                   <tbody class="bg-white divide-y divide-gray-200">
-                  <tr v-for="user in users" :key="user.id">
+                  <tr v-for="tag in tags" :key="tag.id">
                     <td class="px-6 py-4 whitespace-nowrap">
                       <div class="flex items-center">
                         <div class="flex-shrink-0 h-10 w-10">
@@ -48,31 +46,47 @@
                         </div>
                         <div class="ml-4">
                           <div class="text-sm font-medium text-gray-900">
-                            {{ user.name }}
+                            {{ tag.name }}
+<!--                          </div>-->
+<!--                          <div class="text-sm text-gray-500">-->
+<!--                            {{ tag.type }}-->
+<!--                          </div>-->
+<!--                          <div class="text-sm text-gray-500">-->
+<!--                            {{ tag.status }}-->
+<!--                          </div>-->
+                        </div>
+                          </div>
+
+                        <div class="ml-4">
+                          <div class="text-sm font-medium text-gray-900">
+                            {{ tag.type }}
                           </div>
                         </div>
+
                       </div>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {{ user.email }}
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div class="text-sm text-gray-900">Regional Paradigm Technician</div>
+                      <div class="text-sm text-gray-500">Optimization</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                  Active
+                </span>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {{ user.role }}
-                    </td>
 
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      <a
-                          :href="route('users.edit', user.id)"
-                          class="ml-2 text-indigo-600 hover:text-indigo-900">
-                        编辑
-                      </a>
-                      <a
-                          :href="route('users.show', user.id)"
-                          class="ml-2 text-indigo-600 hover:text-indigo-900">
-                        查看
-                      </a>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<!--                      <a-->
+<!--                          :href="route('tags.create', tag.id)"-->
+<!--                          class="text-indigo-600 hover:text-indigo-900">-->
+<!--                        show-->
+<!--                      </a>-->
+
                     </td>
                   </tr>
+
                   <!-- More people... -->
                   </tbody>
                 </table>
@@ -89,13 +103,11 @@
 <script>
 import {defineComponent} from 'vue'
 import AppLayout from '@/Layouts/AppLayout.vue';
-import JetButton from '@/Jetstream/Button.vue';
 
 export default defineComponent({
   components: {
     AppLayout,
-    JetButton,
   },
-  props: ['users'],
+  props: ['tags'],
 })
 </script>

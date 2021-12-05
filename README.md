@@ -12,10 +12,10 @@
 > 由于 www.cxx1.com 过于老化现在将把所以的东西都实现
 
 ## lavuei 由 laravel8 + inertiajs + vue3 实现的开源框架博客系统
-
+## jetstream 全家桶
 ## 环境
 
-> laravel sail 环境一键安装
+> laravel sail 环境一键安装  laravel8 + php8.1
 
 > 功能展示
 
@@ -26,6 +26,11 @@
 - 文章管理
 - 系统管理
 - 文件管理
+
+### 创建 policy
+
+    php artisan make:policy UserPolicy --model=User
+
 
 ## License
 

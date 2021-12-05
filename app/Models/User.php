@@ -58,4 +58,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function getCreatedAttribute($value): string
+    {
+        return now()->parse($value)->format('d F Y, H:i:s');
+    }
 }

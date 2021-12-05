@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Inertia\Response;
+use Laravel\Octane\Exceptions\DdException;
 
 class UserController extends Controller
 {
@@ -22,7 +25,7 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Inertia\Response
+     * @return Response
      */
     public function create()
     {
@@ -44,8 +47,8 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @param  User  $user
+     * @return Response
      */
     public function show(User $user)
     {
@@ -55,30 +58,36 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @param  User  $user
+     * @return Response
      */
     public function edit(User $user)
     {
         return Inertia::render('User/Edit', compact('user'));
     }
 
+
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * 更新用户
+     * @param  Request  $request
+     * @param  User  $user
+     * @return RedirectResponse
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, User $user): RedirectResponse
     {
-        //
+        $request->validate([
+           'name' => 'required',
+           'email' => 'required|email'
+        ]);
+        $user->update($request->only('name', 'email'));
+
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  User  $user
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)

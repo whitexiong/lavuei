@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -30,4 +31,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum','verified'])->resource('users', UserController::class);
+//Route::middleware(['auth:sanctum','verified'])->get('users/index', [UserController::class, 'index'])->name('users.index');
+//Route::middleware(['auth:sanctum','verified'])->get('users/create', [UserController::class, 'create'])->name('users.create');
+//Route::middleware(['auth:sanctum','verified'])->get('users/show', [UserController::class, 'show'])->name('users.show');
+//Route::middleware(['auth:sanctum','verified'])->get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+//Route::middleware(['auth:sanctum','verified'])->put('users/{user}', [UserController::class, 'update'])->name('users.update');
+
+Route::middleware(['auth:sanctum','verified'])->resource('tags', TagController::class);
+
+
+Route::middleware(['auth:sanctum','verified'])->post('tags/store', [TagController::class,'store']);
 
