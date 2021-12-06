@@ -1208,9 +1208,6 @@ select {
 .-mt-px {
 	margin-top: -1px;
 }
-.ml-5 {
-	margin-left: 1.25rem;
-}
 .block {
 	display: block;
 }
@@ -1258,12 +1255,6 @@ select {
 }
 .h-20 {
 	height: 5rem;
-}
-.h-48 {
-	height: 12rem;
-}
-.h-full {
-	height: 100%;
 }
 .min-h-screen {
 	min-height: 100vh;
@@ -1328,9 +1319,6 @@ select {
 .max-w-6xl {
 	max-width: 72rem;
 }
-.max-w-md {
-	max-width: 28rem;
-}
 .flex-1 {
 	flex: 1 1 0%;
 }
@@ -1393,9 +1381,6 @@ select {
 }
 .flex-wrap {
 	flex-wrap: wrap;
-}
-.items-start {
-	align-items: flex-start;
 }
 .items-center {
 	align-items: center;
@@ -1479,9 +1464,6 @@ select {
 .rounded-full {
 	border-radius: 9999px;
 }
-.rounded-xl {
-	border-radius: 0.75rem;
-}
 .rounded-none {
 	border-radius: 0px;
 }
@@ -1521,12 +1503,6 @@ select {
 }
 .border-r {
 	border-right-width: 1px;
-}
-.border-r-0 {
-	border-right-width: 0px;
-}
-.border-dashed {
-	border-style: dashed;
 }
 .border-gray-300 {
 	--tw-border-opacity: 1;
@@ -1625,9 +1601,6 @@ select {
 .p-6 {
 	padding: 1.5rem;
 }
-.p-8 {
-	padding: 2rem;
-}
 .px-4 {
 	padding-left: 1rem;
 	padding-right: 1rem;
@@ -1684,10 +1657,6 @@ select {
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem;
 }
-.px-9 {
-	padding-left: 2.25rem;
-	padding-right: 2.25rem;
-}
 .pt-6 {
 	padding-top: 1.5rem;
 }
@@ -1720,12 +1689,6 @@ select {
 }
 .pt-8 {
 	padding-top: 2rem;
-}
-.pb-6 {
-	padding-bottom: 1.5rem;
-}
-.pl-1 {
-	padding-left: 0.25rem;
 }
 .text-left {
 	text-align: left;
@@ -1790,17 +1753,11 @@ select {
 .leading-4 {
 	line-height: 1rem;
 }
-.leading-6 {
-	line-height: 1.5rem;
-}
 .tracking-widest {
 	letter-spacing: 0.1em;
 }
 .tracking-wider {
 	letter-spacing: 0.05em;
-}
-.tracking-wide {
-	letter-spacing: 0.025em;
 }
 .text-gray-500 {
 	--tw-text-opacity: 1;
@@ -1873,10 +1830,6 @@ select {
 .text-green-800 {
 	--tw-text-opacity: 1;
 	color: rgba(6, 95, 70, var(--tw-text-opacity));
-}
-.text-black {
-	--tw-text-opacity: 1;
-	color: rgba(0, 0, 0, var(--tw-text-opacity));
 }
 .underline {
 	text-decoration: underline;
@@ -1975,22 +1928,6 @@ select {
 .ease-in {
 	transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
-.focus-within\:outline-none:focus-within {
-	outline: 2px solid transparent;
-	outline-offset: 2px;
-}
-.focus-within\:ring-2:focus-within {
-	--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-	--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-	box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-.focus-within\:ring-indigo-500:focus-within {
-	--tw-ring-opacity: 1;
-	--tw-ring-color: rgba(99, 102, 241, var(--tw-ring-opacity));
-}
-.focus-within\:ring-offset-2:focus-within {
-	--tw-ring-offset-width: 2px;
-}
 .hover\:border-gray-300:hover {
 	--tw-border-opacity: 1;
 	border-color: rgba(209, 213, 219, var(--tw-border-opacity));
@@ -2046,13 +1983,6 @@ select {
 .hover\:text-indigo-900:hover {
 	--tw-text-opacity: 1;
 	color: rgba(49, 46, 129, var(--tw-text-opacity));
-}
-.hover\:text-indigo-500:hover {
-	--tw-text-opacity: 1;
-	color: rgba(99, 102, 241, var(--tw-text-opacity));
-}
-.hover\:underline:hover {
-	text-decoration: underline;
 }
 .focus\:z-10:focus {
 	z-index: 10;
@@ -2200,14 +2130,6 @@ select {
 
 	.sm\:col-span-2 {
 		grid-column: span 2 / span 2;
-	}
-
-	.sm\:col-span-3 {
-		grid-column: span 3 / span 3;
-	}
-
-	.sm\:col-span-6 {
-		grid-column: span 6 / span 6;
 	}
 
 	.sm\:mx-0 {
@@ -2433,24 +2355,8 @@ select {
 		margin-top: 0px;
 	}
 
-	.md\:flex {
-		display: flex;
-	}
-
 	.md\:grid {
 		display: grid;
-	}
-
-	.md\:w-48 {
-		width: 12rem;
-	}
-
-	.md\:max-w-2xl {
-		max-width: 42rem;
-	}
-
-	.md\:flex-shrink-0 {
-		flex-shrink: 0;
 	}
 
 	.md\:grid-cols-3 {
@@ -2459,10 +2365,6 @@ select {
 
 	.md\:grid-cols-2 {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-	}
-
-	.md\:grid-cols-9 {
-		grid-template-columns: repeat(9, minmax(0, 1fr));
 	}
 
 	.md\:grid-cols-5 {
@@ -2489,10 +2391,6 @@ select {
 
 	.lg\:col-span-4 {
 		grid-column: span 4 / span 4;
-	}
-
-	.lg\:col-span-2 {
-		grid-column: span 2 / span 2;
 	}
 
 	.lg\:-mx-8 {

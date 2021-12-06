@@ -91,23 +91,6 @@ export default defineComponent({
       });
     },
   },
-
-// setup(props) {
-//   const form = useForm({
-//     _method: "PUT",
-//     name: props.user.name,
-//     email: props.user.email,
-//   });
-//
-//   const updateProfileInformation = (form) => {
-//     form.value.post(route("users.update", props.user.id), {
-//       preserveScroll: true,
-//     });
-//   };
-//   return {form, updateProfileInformation};
-// },
-
-
 })
 ;
 </script>

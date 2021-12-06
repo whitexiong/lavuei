@@ -1,11 +1,18 @@
 <template>
   <app-layout title="Dashboard">
     <template #header>
-      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+      <h2 class="font-semisolid text-xl text-gray-800 leading-tight">
         用户列表
-        <inertia-link :href="route('users.create')" class="float-right">
+        <a
+            :href="route('users.create')"
+            class="float-right"
+            v-if="$page.props.permissions.users.viewAny"
+        >
           <jet-button>创建用户</jet-button>
-        </inertia-link>
+        </a>
+
+
+
       </h2>
     </template>
 
@@ -63,12 +70,16 @@
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       <a
                           :href="route('users.edit', user.id)"
-                          class="ml-2 text-indigo-600 hover:text-indigo-900">
+                          class="ml-2 text-indigo-600 hover:text-indigo-900"
+                          v-if="user.can.update"
+                      >
                         编辑
                       </a>
                       <a
                           :href="route('users.show', user.id)"
-                          class="ml-2 text-indigo-600 hover:text-indigo-900">
+                          class="ml-2 text-indigo-600 hover:text-indigo-900"
+                          v-if="user.can.view"
+                      >
                         查看
                       </a>
                     </td>
