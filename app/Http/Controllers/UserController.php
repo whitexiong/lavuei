@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Enum\UserRoleEnum;
+use App\Http\Requests\UserRequest;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
-use Laravel\Octane\Exceptions\DdException;
 
 class UserController extends Controller
 {
@@ -20,7 +24,7 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -33,21 +37,28 @@ class UserController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
         return Inertia::render('User/Create');
-
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  UserRequest  $request
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(UserRequest $request): RedirectResponse
     {
-        //
+        $password = Hash::make($request->input('password'));
+        $role = $request->input('role') === UserRoleEnum::USER->value ? 'user' : 'admin';
+        $user = new User();
+        $user->fill([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'role' => $role,
+            'password' => $password,
+        ]);
+        $user->save();
+        return Redirect::route('users.show', $user);
     }
 
     /**
@@ -82,8 +93,8 @@ class UserController extends Controller
     public function update(Request $request, User $user): RedirectResponse
     {
         $request->validate([
-           'name' => 'required',
-           'email' => 'required|email'
+            'name' => 'required',
+            'email' => 'required|email'
         ]);
         $user->update($request->only('name', 'email'));
 
@@ -94,10 +105,18 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  User  $user
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
+     * @throws Exception
      */
-    public function destroy(User $user)
+    public function destroy(User $user): RedirectResponse
     {
-        //
+        try {
+            User::query()->where('id', $user->id)->delete();
+
+        } catch (Exception $exception) {
+            throw new $exception;
+        }
+
+        return back();
     }
 }

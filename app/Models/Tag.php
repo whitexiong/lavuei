@@ -30,7 +30,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Tag extends Model
+class Tag extends BaseModel
 {
 	protected $table = 'tags';
 

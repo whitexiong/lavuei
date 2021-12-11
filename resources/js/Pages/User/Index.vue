@@ -8,10 +8,8 @@
             class="float-right"
             v-if="$page.props.permissions.users.viewAny"
         >
-          <jet-button>创建用户</jet-button>
+          <jet-button class="transition duration-150 ease-in-out hover:scale-25 bg-white">创建用户</jet-button>
         </a>
-
-
 
       </h2>
     </template>
@@ -75,6 +73,7 @@
                       >
                         编辑
                       </a>
+
                       <a
                           :href="route('users.show', user.id)"
                           class="ml-2 text-indigo-600 hover:text-indigo-900"
@@ -82,6 +81,15 @@
                       >
                         查看
                       </a>
+
+                      <a
+                          :href="route('users.destroy', user.id)"
+                          class="ml-2 text-indigo-600 hover:text-indigo-900"
+                          v-if="user.can.destroy"
+                      >
+                        删除
+                      </a>
+
                     </td>
                   </tr>
                   <!-- More people... -->

@@ -6,6 +6,7 @@
 
 namespace App\Models;
 
+use App\Traits\HasCan;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
@@ -48,8 +49,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Article whereViews($value)
  * @mixin \Eloquent
  */
-class Article extends Model
+class Article extends BaseModel
 {
+    use HasCan;
+
 	protected $table = 'articles';
 
 	protected $casts = [
@@ -78,4 +81,13 @@ class Article extends Model
 		'public_date',
 		'status'
 	];
+
+    protected $appends = [
+        'can'
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

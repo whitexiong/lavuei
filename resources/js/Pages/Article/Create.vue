@@ -3,55 +3,54 @@
   <app-layout title="Dashboard">
     <template #header>
       <h2 class="font-semisolid text-xl text-gray-800 leading-tight">
-        创建用户
+        创建文章
       </h2>
     </template>
 
-    <div class="py-12">
-      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <jet-form-section @submitted="storeProfileInformation">
-
-          <template #description>
-            填写下面用户信息
-          </template>
-
+    <div class="py-12 max-w-full">
+      <div class="max-w-7xl">
+        <jet-form-section @submitted="storeProfileInformation" class="max-w-screen-2xl">
           <template #form>
-            <!-- Name -->
-            <div class="col-span-6 sm:col-span-4">
-              <jet-label for="name" value="用户名"/>
-              <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" autocomplete="name"/>
-              <jet-input-error :message="form.errors.name" class="mt-2"/>
-            </div>
 
-            <!-- Email -->
             <div class="col-span-6 sm:col-span-4">
-              <jet-label for="email" value="邮箱"/>
-              <jet-input id="email" type="email"  v-model="form.email" class="mt-1 block w-full" />
-              <jet-input-error :message="form.errors.email" class="mt-2"/>
+              <jet-label for="title" value="文章标题"/>
+              <jet-input id="title" type="text" class="mt-1 block w-full" v-model="form.title" autocomplete="title"/>
+              <jet-input-error :message="form.errors.title" class="mt-2"/>
             </div>
 
             <div class="col-span-6 sm:col-span-4">
-                <jet-label for="password" value="密码" />
-                <jet-input id="password" type="password"   class="mt-1 block w-full" v-model="form.password" required autocomplete="password" />
-                <jet-input-error :message="form.errors.password" class="mt-2"/>
+              <jet-label for="subtitle" value="副标题"/>
+              <jet-input id="subtitle" type="text"  v-model="form.subtitle" class="mt-1 block w-full" />
+              <jet-input-error :message="form.errors.subtitle" class="mt-2"/>
             </div>
 
+            <div class="col-span-6 md:col-span-6">
+              <jet-label for="subtitle" value="文章内容"/>
+              <div class="pt-6">
+                    <mavon-editor ref="editor" v-model="form.body" class="w-full"> </mavon-editor>
+              </div>
+              <jet-input-error :message="form.errors.body" class="mt-2"/>
+            </div>
+
+
             <div class="col-span-6 sm:col-span-4">
-              <jet-label for="role" value="角色"/>
+              <jet-label for="role" value="文章状态"/>
               <div class="flex items-center" id="se-role">
-                <input id="user" name="role" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" v-model="form.role" v-bind:value=1>
-                <label for=user class="ml-3 block text-sm font-medium text-gray-700 m-5">
-                  user
+                <input id="enable" name="role" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" v-model="form.status" v-bind:value=1>
+                <label for=enable class="ml-3 block text-sm font-medium text-gray-700 m-5">
+                  开启
                 </label>
-                <input id="admin" name="role" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" v-model="form.role" v-bind:value=0>
-                <label for="admin" class="ml-3 block text-sm font-medium text-gray-700">
-                  admin
+                <input id="disable" name="role" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" v-model="form.status" v-bind:value=0>
+                <label for="disable" class="ml-3 block text-sm font-medium text-gray-700">
+                  关闭
                 </label>
               </div>
-              <jet-input-error :message="form.errors.role" class="mt-2"/>
+              <jet-input-error :message="form.errors.status" class="mt-2"/>
             </div>
 
           </template>
+
+
 
           <template #actions>
             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
@@ -64,12 +63,12 @@
             </div>
           </template>
         </jet-form-section>
-      </div>
-    </div>
 
+      </div>
+
+    </div>
   </app-layout>
 </template>
-
 
 
 <script>
@@ -82,9 +81,15 @@ import JetLabel from '@/Jetstream/Label.vue'
 import JetActionMessage from '@/Jetstream/ActionMessage.vue'
 import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
+import {mavonEditor} from "mavon-editor";
+import "mavon-editor/dist/css/index.css";
+
 
 export default defineComponent({
+  name: "Create",
+
   components: {
+    mavonEditor,
     AppLayout,
     JetActionMessage,
     JetButton,
@@ -97,21 +102,23 @@ export default defineComponent({
   props: ['user'],
 
   data() {
-
     return {
       form: this.$inertia.form({
         _method: 'POST',
-        name: '',
-        email: '',
-        password: '',
-        role: ''
+        user_id: this.user.id,
+        categories_id: 1,
+        comments: 0,
+        title: '',
+        subtitle: '',
+        body: '',
+        status: '',
       }),
     }
   },
 
   methods: {
     storeProfileInformation(props) {
-      this.form.post(route('users.store'), {
+      this.form.post(route('articles.store'), {
         errorBag: 'storeProfileInformation',
         preserveScroll: true,
       });

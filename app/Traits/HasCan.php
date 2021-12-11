@@ -10,8 +10,8 @@ trait HasCan
         return [
             'view' => $currentUser->can('view', $this),
             'update' => $currentUser->can('update', $this),
-            'delete' => $currentUser->can('delete', $this),
             'create' => $currentUser->can('create', $this),
+            'destroy' => $currentUser->can('destroy', $this),
         ];
     }
 }

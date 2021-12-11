@@ -20,14 +20,19 @@
               <!-- Navigation Links -->
               <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                 <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
-                  Dashboard
+                  主页
                 </jet-nav-link>
 
                 <jet-nav-link :href="route('users.index')" :active="route().current('users.*')">
-                  Users
+                  用户管理
                 </jet-nav-link>
+
                 <jet-nav-link :href="route('tags.index')" :active="route().current('tags.*')">
-                  Tags
+                  标签管理
+                </jet-nav-link>
+
+                <jet-nav-link :href="route('articles.index')" :active="route().current('article.*')">
+                  文章管理
                 </jet-nav-link>
 
               </div>
@@ -102,9 +107,10 @@
                 <jet-dropdown align="right" width="48">
                   <template #trigger>
                     <button v-if="$page.props.jetstream.managesProfilePhotos"
-                            class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                            class="flex text-sm border-2 border-transparent rounded-full shadow-md focus:outline-none focus:border-green-200 transition hover:bg-gray-300 duration-1000">
                       <img class="h-8 w-8 rounded-full object-cover" :src="$page.props.user.profile_photo_url"
                            :alt="$page.props.user.name"/>
+                      <div class="font-semibold font-serif text-2xl">{{ $page.props.user.name }}</div>
                     </button>
 
                     <span v-else class="inline-flex rounded-md">

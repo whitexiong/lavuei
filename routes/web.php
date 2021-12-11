@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
@@ -31,8 +32,12 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum','verified'])->resource('users', UserController::class);
+Route::middleware(['auth:sanctum','verified'])->resource('articles', ArticleController::class);
+Route::middleware(['auth:sanctum','verified'])->get('users/{user}/destroy', [UserController::class, 'destroy'])->name('users.destroy');
+
+
+
 //Route::middleware(['auth:sanctum','verified'])->get('users/index', [UserController::class, 'index'])->name('users.index');
-//Route::middleware(['auth:sanctum','verified'])->get('users/create', [UserController::class, 'create'])->name('users.create');
 //Route::middleware(['auth:sanctum','verified'])->get('users/show', [UserController::class, 'show'])->name('users.show');
 //Route::middleware(['auth:sanctum','verified'])->get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
 //Route::middleware(['auth:sanctum','verified'])->put('users/{user}', [UserController::class, 'update'])->name('users.update');

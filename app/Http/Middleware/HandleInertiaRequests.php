@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Article;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
@@ -37,17 +38,22 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request)
     {
+        $user = $request->user();
         return array_merge(parent::share($request), [
-            'permissions' => [
-                'users' => function () use ($request) {
-                    $user = $request->user();
-                    if ($user) {
-                        return [
-                            'viewAny' => $user->can('viewAny', User::class)
-                        ];
-                    }
-                }
-            ]
+            'permissions' => function() use ($user) {
+                if(!$user) return;
+
+                return [
+                    'users' => [
+                        'create' => $user->can('create', User::class),
+                        'viewAny' => $user->can('viewAny', User::class),
+                    ],
+                    'articles' => [
+                        'create' => $user->can('create', Article::class),
+                        'viewAny' => $user->can('viewAny', Article::class),
+                    ]
+                ];
+            }
         ]);
     }
 }

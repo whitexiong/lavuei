@@ -27,5 +27,8 @@
         "tailwindcss": "^2.0.1",
         "vue": "^3.0.5",
         "vue-loader": "^16.1.2"
+    },
+    "dependencies": {
+        "mavon-editor": "^3.0.0-beta"
     }
 }
