@@ -1,4 +1,4 @@
-![Image text](https://raw.github.com/whitexiong/lavuei/master/public/images/lavuei.png)
+![Image text](https://raw.github.com/whitexiong/lavuei/master/public/images/lavuei180.png)
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
