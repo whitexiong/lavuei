@@ -62,6 +62,7 @@
     sail build --no-cache  # 改了dockefile 文件后需要重新编译
     sail shell # 进入 shell 环境
     php artisan migrate
+    php artisan schedule:run 运行定时任务
 
 > 启动前端
 

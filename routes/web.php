@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\FileSystemController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
@@ -34,6 +35,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['auth:sanctum','verified'])->resource('users', UserController::class);
 Route::middleware(['auth:sanctum','verified'])->resource('articles', ArticleController::class);
 Route::middleware(['auth:sanctum','verified'])->get('users/{user}/destroy', [UserController::class, 'destroy'])->name('users.destroy');
+
+
+Route::middleware(['auth:sanctum','verified'])->post('file-system/upload-image', [FileSystemController::class, 'uploadImage'])->name('file-system.upload-image');
 
 
 

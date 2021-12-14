@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
 class ArticleController extends Controller
@@ -20,7 +21,7 @@ class ArticleController extends Controller
 
     public function index()
     {
-        $articles = Article::query()->leftJoin(User::new()->getTable(), 'users.id', '=','articles.user_id')
+        $articles = Article::query()->leftJoin(User::new()->getTable(), 'users.id', '=', 'articles.user_id')
             ->select([
                 'articles.id',
                 'users.name',
@@ -53,6 +54,22 @@ class ArticleController extends Controller
     {
 
         $article = new Article();
+
+        $body = $request->input('body');
+        $partner = '!\[(.*)\]\((.+)\)!';  // 匹配 markdown 中的图片地址
+        preg_match_all($partner, $body, $match);
+
+        if ($match !== null) {
+            foreach ($match[2] as $path) {
+                $baseName = basename($path);
+                $pattern = '/temp\/'.$baseName.'/i';
+                $replacement = $baseName;
+                // 把文件挪到  images 下
+                Storage::disk('local')->move('public/images/temp/'.$baseName,'public/images/'.$baseName);
+                $body = preg_replace($pattern, $replacement, $body);
+            }
+        }
+
         $article->fill($request->only([
             'user_id',
             'title',
@@ -65,7 +82,6 @@ class ArticleController extends Controller
         $article->save();
         return Redirect::route('articles.show', $article);
     }
-
 
 
 }

@@ -11,7 +11,7 @@
         <template #form>
             <!-- Profile Photo -->
             <div class="col-span-6 sm:col-span-4" v-if="$page.props.jetstream.managesProfilePhotos">
-                <!-- Profile Photo File Input -->
+                <!-- Profile Photo FileSystemController Input -->
                 <input type="file" class="hidden"
                             ref="photo"
                             @change="updatePhotoPreview">

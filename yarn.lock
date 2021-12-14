@@ -3340,6 +3340,11 @@
   "resolved" "https://registry.npmjs.org/highlight.js/-/highlight.js-9.18.5.tgz"
   "version" "9.18.5"
 
+"highlight@^0.2.4":
+  "integrity" "sha1-isAodbA/WTXgZ1hSt2z+H9WODf8="
+  "resolved" "https://registry.npmjs.org/highlight/-/highlight-0.2.4.tgz"
+  "version" "0.2.4"
+
 "hmac-drbg@^1.0.1":
   "integrity" "sha1-0nRXAQJabHdabFRXk+1QL8DGSaE="
   "resolved" "https://registry.npmjs.org/hmac-drbg/-/hmac-drbg-1.0.1.tgz"
@@ -4104,6 +4109,11 @@
   "version" "3.1.0"
   dependencies:
     "semver" "^6.0.0"
+
+"marked@^4.0.7":
+  "integrity" "sha512-mQrRvV2vRk7DHZsWsYJfAjmBo+lSYPhTJPThaaGpkEfmC+4oefeug2txZniQTieDS0CFpokfVhd7JuS5GtnHhA=="
+  "resolved" "https://registry.npmjs.org/marked/-/marked-4.0.7.tgz"
+  "version" "4.0.7"
 
 "mavon-editor@^3.0.0-beta":
   "integrity" "sha512-cmGKbkgrlvFtrhEVyEUIO2X30R+0p0cWpWcYZ97p2E7zn5flKakgv3gq/4mrzjb6UTmhUiHis38k+a6fP6XUEQ=="

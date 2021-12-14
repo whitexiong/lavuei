@@ -27,7 +27,7 @@
             <div class="col-span-6 md:col-span-6">
               <jet-label for="subtitle" value="文章内容"/>
               <div class="pt-6">
-                    <mavon-editor ref="editor" v-model="form.body" class="w-full"> </mavon-editor>
+                    <mavon-editor ref="editor"  :ishljs="true" @imgAdd="$imgAdd" @imgDel="$imgDel" v-model="form.body" class="w-full"> </mavon-editor>
               </div>
               <jet-input-error :message="form.errors.body" class="mt-2"/>
             </div>
@@ -47,9 +47,7 @@
               </div>
               <jet-input-error :message="form.errors.status" class="mt-2"/>
             </div>
-
           </template>
-
 
 
           <template #actions>
@@ -81,8 +79,10 @@ import JetLabel from '@/Jetstream/Label.vue'
 import JetActionMessage from '@/Jetstream/ActionMessage.vue'
 import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
-import {mavonEditor} from "mavon-editor";
-import "mavon-editor/dist/css/index.css";
+import {mavonEditor} from "mavon-editor"
+import "mavon-editor/dist/css/index.css"
+
+
 
 
 export default defineComponent({
@@ -99,7 +99,11 @@ export default defineComponent({
     JetLabel,
     JetSecondaryButton,
   },
-  props: ['user'],
+  props: {
+    user: Object,
+  },
+
+
 
   data() {
     return {
@@ -113,16 +117,41 @@ export default defineComponent({
         body: '',
         status: '',
       }),
+      imgFile: new Set,
     }
   },
 
   methods: {
+
     storeProfileInformation(props) {
       this.form.post(route('articles.store'), {
         errorBag: 'storeProfileInformation',
         preserveScroll: true,
       });
     },
+    // 绑定@imgAdd event
+    $imgAdd(pos, $file){
+      let vm = this;
+      // 第一步.将图片上传到服务器.
+      let formData = new FormData();
+      formData.append('image', $file);
+      axios({
+        url: route('file-system.upload-image'),
+        method: 'post',
+        data: formData,
+        headers: { 'Content-Type': 'multipart/form-data' },
+      }).then((url) => {
+        // 第二步.将返回的url替换到文本原位置![...](0) -> ![...](url)
+        // $vm.$img2Url 详情见本页末尾
+        vm.imgFile.add(url.data.path)
+        console.log(vm.imgFile)
+        this.$refs.editor.$img2Url(pos, url.data.path);
+      })
+    },
+    $imgDel(rs) {
+      console.log(this.imgFile);
+    }
+
   },
 
 

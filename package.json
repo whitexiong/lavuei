@@ -29,6 +29,8 @@
         "vue-loader": "^16.1.2"
     },
     "dependencies": {
+        "highlight": "^0.2.4",
+        "marked": "^4.0.7",
         "mavon-editor": "^3.0.0-beta"
     }
 }

@@ -112,13 +112,13 @@
 <!--                        编辑-->
 <!--                      </a>-->
 
-<!--                      <a-->
-<!--                          :href="route('articles.show', article.id)"-->
-<!--                          class="ml-2 text-indigo-600 hover:text-indigo-900"-->
-<!--                          v-if="article.can.view"-->
-<!--                      >-->
-<!--                        查看-->
-<!--                      </a>-->
+                      <a
+                          :href="route('articles.show', article.id)"
+                          class="ml-2 text-indigo-600 hover:text-indigo-900"
+                          v-if="article.can.view"
+                      >
+                        查看
+                      </a>
 
 <!--                      <a-->
 <!--                          :href="route('articles.destroy', article.id)"-->

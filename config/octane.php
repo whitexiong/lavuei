@@ -170,7 +170,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | File Watching
+    | FileSystemController Watching
     |--------------------------------------------------------------------------
     |
     | The following list of files and directories will be watched when using
