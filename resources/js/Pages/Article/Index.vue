@@ -103,14 +103,14 @@
                       {{ article.created_at }}
                     </td>
 
-<!--                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-->
-<!--                      <a-->
-<!--                          :href="route('articles.edit', article.id)"-->
-<!--                          class="ml-2 text-indigo-600 hover:text-indigo-900"-->
-<!--                          v-if="article.can.update"-->
-<!--                      >-->
-<!--                        编辑-->
-<!--                      </a>-->
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <a
+                          :href="route('articles.edit', article.id)"
+                          class="ml-2 text-indigo-600 hover:text-indigo-900"
+                          v-if="article.can.update"
+                      >
+                        编辑
+                      </a>
 
                       <a
                           :href="route('articles.show', article.id)"
@@ -120,15 +120,15 @@
                         查看
                       </a>
 
-<!--                      <a-->
-<!--                          :href="route('articles.destroy', article.id)"-->
-<!--                          class="ml-2 text-indigo-600 hover:text-indigo-900"-->
-<!--                          v-if="article.can.destroy"-->
-<!--                      >-->
-<!--                        删除-->
-<!--                      </a>-->
+                      <a
+                          :href="route('articles.destroy', article.id)"
+                          class="ml-2 text-indigo-600 hover:text-indigo-900"
+                          v-if="article.can.destroy"
+                      >
+                        删除
+                      </a>
 
-<!--                    </td>-->
+                    </td>
                   </tr>
                   <!-- More people... -->
                   </tbody>

@@ -48,6 +48,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Article whereUserId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Article whereViews($value)
  * @mixin \Eloquent
+ * @property-read mixed $can
+ * @property-write mixed $order_status
+ * @property-read \App\Models\User $user
  */
 class Article extends BaseModel
 {

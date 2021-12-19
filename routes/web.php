@@ -4,6 +4,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\FileSystemController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WorkManController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -35,6 +36,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['auth:sanctum','verified'])->resource('users', UserController::class);
 Route::middleware(['auth:sanctum','verified'])->resource('articles', ArticleController::class);
 Route::middleware(['auth:sanctum','verified'])->get('users/{user}/destroy', [UserController::class, 'destroy'])->name('users.destroy');
+Route::middleware(['auth:sanctum','verified'])->get('articles/{article}/destroy', [ArticleController::class, 'destroy'])->name('articles.destroy');
 
 
 Route::middleware(['auth:sanctum','verified'])->post('file-system/upload-image', [FileSystemController::class, 'uploadImage'])->name('file-system.upload-image');
@@ -50,4 +52,7 @@ Route::middleware(['auth:sanctum','verified'])->resource('tags', TagController::
 
 
 Route::middleware(['auth:sanctum','verified'])->post('tags/store', [TagController::class,'store']);
+
+
+Route::middleware(['auth:sanctum','verified'])->post('work-man/edit', [WorkManController::class,'edit'])->name('work-man-edit');
 

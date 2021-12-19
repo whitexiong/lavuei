@@ -72,6 +72,11 @@
     npm install && npm run dev
     sail npm run watch-poll  # 热重启
 
+> 命令
+
+    sail php artisan code:models --table=xxx  生成模型文件
+    
+
 > 实现功能
 
 - 用户管理
