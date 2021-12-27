@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ArticleHistoryVersionController;
 use App\Http\Controllers\FileSystemController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
@@ -35,8 +36,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::middleware(['auth:sanctum','verified'])->resource('users', UserController::class);
 Route::middleware(['auth:sanctum','verified'])->resource('articles', ArticleController::class);
+Route::middleware(['auth:sanctum','verified'])->resource('article-history-version', ArticleHistoryVersionController::class);
 Route::middleware(['auth:sanctum','verified'])->get('users/{user}/destroy', [UserController::class, 'destroy'])->name('users.destroy');
 Route::middleware(['auth:sanctum','verified'])->get('articles/{article}/destroy', [ArticleController::class, 'destroy'])->name('articles.destroy');
+//Route::middleware(['auth:sanctum','verified'])->get('article-history-version/show', [ArticleHistoryVersionController::class, 'show'])->name('article-history-version.show');
 
 
 Route::middleware(['auth:sanctum','verified'])->post('file-system/upload-image', [FileSystemController::class, 'uploadImage'])->name('file-system.upload-image');
@@ -54,5 +57,5 @@ Route::middleware(['auth:sanctum','verified'])->resource('tags', TagController::
 Route::middleware(['auth:sanctum','verified'])->post('tags/store', [TagController::class,'store']);
 
 
-Route::middleware(['auth:sanctum','verified'])->post('work-man/edit', [WorkManController::class,'edit'])->name('work-man-edit');
+//Route::middleware(['auth:sanctum','verified'])->post('work-man/edit', [WorkManController::class,'edit'])->name('work-man-edit');
 

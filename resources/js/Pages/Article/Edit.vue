@@ -14,138 +14,139 @@
               class="ml-8 text-sm font-semibold bg-green-500 py-3 px-4 rounded-lg hover:bg-gray-300 hover:text-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 bg-sky-300">
         分享编辑
       </button>
-    </template>
 
-    <div class="py-5">
-
-      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 float-right">
-        <jet-form-section @submitted="updateProfileInformation" class="max-w-screen-2xl">
-          <template #form>
-            <div class="col-span-6 sm:col-span-4">
-              <jet-label for="title" value="文章标题"/>
-              <jet-input id="title" type="text" class="mt-1 block w-full" v-model="form.title" autocomplete="title"/>
-              <jet-input-error :message="form.errors.title" class="mt-2"/>
-            </div>
-
-            <div class="col-span-6 sm:col-span-4">
-              <jet-label for="subtitle" value="副标题"/>
-              <jet-input id="subtitle" type="text" v-model="form.subtitle" class="mt-1 block w-full"/>
-              <jet-input-error :message="form.errors.subtitle" class="mt-2"/>
-            </div>
-
-            <div class="col-span-6 md:col-span-6">
-              <jet-label for="subtitle" value="文章内容"/>
-              <div class="pt-6">
-
-                <mavon-editor ref="editor" @save="$save" @change="$change" :ishljs="true" @imgAdd="$imgAdd"
-                              @imgDel="$imgDel"
-                              v-model="form.body" class="w-full">
-                </mavon-editor>
-
-              </div>
-              <jet-input-error :message="form.errors.body" class="mt-2"/>
-            </div>
-
-
-            <div class="col-span-6 sm:col-span-4">
-              <jet-label for="role" value="文章状态"/>
-              <div class="flex items-center" id="se-role">
-                <input id="enable" name="role" type="radio"
-                       class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" v-model="form.status"
-                       v-bind:value=1>
-                <label for=enable class="ml-3 block text-sm font-medium text-gray-700 m-5">
-                  开启
-                </label>
-                <input id="disable" name="role" type="radio"
-                       class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" v-model="form.status"
-                       v-bind:value=0>
-                <label for="disable" class="ml-3 block text-sm font-medium text-gray-700">
-                  关闭
-                </label>
-              </div>
-              <jet-input-error :message="form.errors.status" class="mt-2"/>
-            </div>
-          </template>
-
-          <template #actions>
-            <jet-action-message :on="form.recentlySuccessful" class="mr-3">
-              更新完成.
-            </jet-action-message>
-
-            <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-              更新
-            </jet-button>
-          </template>
-
-        </jet-form-section>
-
-      </div>
-
-      <div class="flex flex-col h-full p-3 bg-coolGray-50 text-coolGray-800">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between">
-          <h2>
+      <div class="flex items-center justify-between float-right">
+        <h2>
             <span style="vertical-align: inherit;">
               <span style="vertical-align: inherit;">历史版本</span>
             </span>
-          </h2>
-          <button class="p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-current text-coolGray-800">
-              <rect width="352" height="32" x="80" y="96"></rect>
-              <rect width="352" height="32" x="80" y="240"></rect>
-              <rect width="352" height="32" x="80" y="384"></rect>
-            </svg>
-          </button>
-        </div>
-        <div class="relative">
+        </h2>
+        <button v-on:click="sidebarToggle()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+               class="w-5 h-5 fill-current text-coolGray-800">
+            <rect width="352" height="32" x="80" y="96"></rect>
+            <rect width="352" height="32" x="80" y="240"></rect>
+            <rect width="352" height="32" x="80" y="384"></rect>
+          </svg>
+        </button>
+      </div>
+
+    </template>
+
+    <div class="mx-auto bg-grey-400">
+
+      <div class="min-h-screen flex flex-col">
+        <div class="flex flex-1">
+          <div class="bg-white-300 flex-1 p-3 overflow-hidden">
+
+            <jet-form-section @submitted="updateProfileInformation" class="max-w-screen-2xl">
+              <template #form>
+                <div class="col-span-6 sm:col-span-4">
+                  <jet-label for="title" value="文章标题"/>
+                  <jet-input id="title" type="text" class="mt-1 block w-full" v-model="form.title"
+                             autocomplete="title"/>
+                  <jet-input-error :message="form.errors.title" class="mt-2"/>
+                </div>
+
+                <div class="col-span-6 sm:col-span-4">
+                  <jet-label for="subtitle" value="副标题"/>
+                  <jet-input id="subtitle" type="text" v-model="form.subtitle" class="mt-1 block w-full"/>
+                  <jet-input-error :message="form.errors.subtitle" class="mt-2"/>
+                </div>
+
+                <div class="col-span-6 md:col-span-6">
+                  <jet-label for="subtitle" value="文章内容"/>
+                  <div class="pt-6">
+
+                    <mavon-editor ref="editor" @save="$save" @change="$change" :ishljs="true" @imgAdd="$imgAdd"
+                                  @imgDel="$imgDel"
+                                  v-model="form.body" class="w-full">
+                    </mavon-editor>
+
+                  </div>
+                  <jet-input-error :message="form.errors.body" class="mt-2"/>
+                </div>
+
+
+                <div class="col-span-6 sm:col-span-4">
+                  <jet-label for="role" value="文章状态"/>
+                  <div class="flex items-center" id="se-role">
+                    <input id="enable" name="role" type="radio"
+                           class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" v-model="form.status"
+                           v-bind:value=1>
+                    <label for=enable class="ml-3 block text-sm font-medium text-gray-700 m-5">
+                      开启
+                    </label>
+                    <input id="disable" name="role" type="radio"
+                           class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" v-model="form.status"
+                           v-bind:value=0>
+                    <label for="disable" class="ml-3 block text-sm font-medium text-gray-700">
+                      关闭
+                    </label>
+                  </div>
+                  <jet-input-error :message="form.errors.status" class="mt-2"/>
+                </div>
+              </template>
+
+              <template #actions>
+                <jet-action-message :on="form.recentlySuccessful" class="mr-3">
+                  更新完成.
+                </jet-action-message>
+
+                <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                  更新
+                </jet-button>
+              </template>
+
+            </jet-form-section>
+
+          </div>
+
+          <div class="flex flex-col h-full p-3 bg-coolGray-50 text-coolGray-800"  id="sidebar">
+            <div class="space-y-3">
+
+
+              <div class="relative">
 				<span class="absolute inset-y-0 left-0 flex items-center py-4">
 					<button type="submit" class="p-2 focus:outline-none focus:ring">
 						<svg fill="currentColor" viewBox="0 0 512 512" class="w-5 h-5 text-coolGray-600">
-							<path d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"></path>
+							<path
+                  d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"></path>
 						</svg>
 					</button>
 				</span>
-          <input type="search" name="Search" placeholder="搜索..." class="w-full py-2 pl-10 text-sm border-transparent rounded-md focus:outline-none bg-coolGray-100 text-coolGray-800 focus:bg-coolGray-50">
-        </div>
-        <div class="flex-1">
-          <ul class="pt-2 pb-4 space-y-1 text-sm bg-coolGray-100 text-coolGray-800">
-            <li class="hover:bg-gray-300 hover:text-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900">
-              <article>
-                <a href="#" class="grid p-4 overflow-hidden md:grid-cols-5 rounded-xl lg:p-6 xl:grid-cols-13 hover:bg-coolGray-50">
-                  <h3 class="mb-1 ml-8 font-semibold md:col-start-2 md:col-span-4 md:ml-0 xl:col-start-3 xl:col-span-9">{{ article.title }}</h3>
-                  <time datetime="" class="row-start-1 mb-1 md:col-start-1 xl:col-span-2 text-coolGray-600">{{ article.created_at }}</time>
-                  <span>编辑人: white</span>
-                </a>
-              </article>
-            </li>
+                <input type="search" name="Search" placeholder="搜索..."
+                       class="w-full py-2 pl-10 text-sm border-transparent rounded-md focus:outline-none bg-coolGray-100 text-coolGray-800 focus:bg-coolGray-50">
+              </div>
+              <div class="flex-1">
 
-            <li class="hover:bg-gray-300 hover:text-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900">
-              <article>
-                <a href="#" class="grid p-4 overflow-hidden md:grid-cols-5 rounded-xl lg:p-6 xl:grid-cols-13 hover:bg-coolGray-50">
-                  <h3 class="mb-1 ml-8 font-semibold md:col-start-2 md:col-span-4 md:ml-0 xl:col-start-3 xl:col-span-9">{{ article.title }}</h3>
-                  <time datetime="" class="row-start-1 mb-1 md:col-start-1 xl:col-span-2 text-coolGray-600">{{ article.created_at }}</time>
-                  <span>编辑人: white</span>
-                  <p>状态: 新增</p>
-                  <p>增加内容: xxxxxxxxxxxxxxxxx</p>
-                </a>
-              </article>
-            </li>
+                <ul v-for="article in articleHistoryVersionsList.data" :key="article.id"
+                    class="pt-2 pb-4 space-y-1 text-sm bg-coolGray-100 text-coolGray-800">
 
-            <li class="hover:bg-gray-300 hover:text-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900">
-              <article>
-                <a href="#" class="grid p-4 overflow-hidden md:grid-cols-5 rounded-xl lg:p-6 xl:grid-cols-13 hover:bg-coolGray-50">
-                  <h3 class="mb-1 ml-8 font-semibold md:col-start-2 md:col-span-4 md:ml-0 xl:col-start-3 xl:col-span-9">{{ article.title }}</h3>
-                  <time datetime="" class="row-start-1 mb-1 md:col-start-1 xl:col-span-2 text-coolGray-600">{{ article.created_at }}</time>
-                  <span>编辑人: white</span>
-                </a>
-              </article>
-            </li>
+                  <li v-bind:class="{ 'hover:bg-gray-300': isActive }"
+                      class="hover:text-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900">
+                    <article>
+                      <a :href="route('article-history-version.show', article.id)"
+                         class="grid p-4 overflow-hidden md:grid-cols-5 rounded-xl lg:p-6 xl:grid-cols-13 hover:bg-coolGray-50">
+                        <h3 class="mb-1 ml-8 font-semibold md:col-start-2 md:col-span-4 md:ml-0 xl:col-start-3 xl:col-span-9">
+                          {{ article.title }}</h3>
+                        <time datetime="" class="row-start-1 mb-1 md:col-start-1 xl:col-span-2 text-coolGray-600">
+                          {{ article.created_at }}
+                        </time>
+                        <span>编辑人: white</span>
+                      </a>
+                    </article>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-          </ul>
+            <jet-pagination class="m-5" :links="articleHistoryVersionsList.links"/>
+
+          </div>
+
         </div>
       </div>
-
-    </div>
 
     </div>
 
@@ -165,6 +166,8 @@ import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import {mavonEditor} from "mavon-editor"
 import "mavon-editor/dist/css/index.css"
+import JetPagination from '@/Components/Pagination.vue';
+
 
 let ws = new WebSocket("ws://lavue.test:2346");
 
@@ -181,9 +184,11 @@ export default defineComponent({
     JetInputError,
     JetLabel,
     JetSecondaryButton,
+    JetPagination,
+
   },
 
-  props: ['article'],
+  props: ['article', 'articleHistoryVersionsList'],
 
   data() {
     return {
@@ -210,6 +215,16 @@ export default defineComponent({
 
 
   methods: {
+
+    sidebarToggle: function () {
+      var sidebar = document.getElementById('sidebar');
+      if (sidebar.style.display === "none") {
+        sidebar.style.display = "block";
+      } else {
+        sidebar.style.display = "none";
+      }
+
+    },
 
     updateProfileInformation(props) {
       this.form.post(route('articles.update', this.article.id), {
@@ -375,6 +390,7 @@ export default defineComponent({
       axios.post(route('articles.update', this.article.id), this.form)
           .then(function (response) {
             console.log(response);
+            alert('保存版本成功')
           })
           .catch(function (error) {
             console.log(error);

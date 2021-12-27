@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Enum\ArticleStatusEnum;
+use App\Enum\VersionEnum;
 use App\Http\Requests\CreateArticleRequest;
 use App\Models\Article;
 use App\Models\ArticleHistoryVersion;
 use App\Models\User;
 use Exception;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Inertia\Inertia;
-use Laravel\Octane\Exceptions\DdException;
 
 class ArticleController extends Controller
 {
@@ -41,6 +43,7 @@ class ArticleController extends Controller
             ])->paginate(10);
 
 
+
         return Inertia::render('Article/Index', compact('articles'));
     }
 
@@ -54,17 +57,16 @@ class ArticleController extends Controller
         return Inertia::render('Article/Show', compact('article'));
     }
 
+
     /**
-     * 更新文章
      * @param  Request  $request
      * @param  Article  $article
-     * @return RedirectResponse
-     * @throws DdException
+     * @return JsonResponse|RedirectResponse
      */
     public function update(Request $request, Article $article)
     {
         $request->validate([
-            'user_id' => ['required', Rule::exists(User::new()->getTable(),'id')],
+            'user_id' => ['required', Rule::exists(User::new()->getTable(), 'id')],
 //            'categories_id' => ['required'],
 //            'comments' => ['required'],
             'title' => ['required', 'string', 'between:5,60'],
@@ -119,10 +121,11 @@ class ArticleController extends Controller
         }
 
         // 判断是否是保存历史版本
-        if($request->input('version') == 1){
-            $this->createArticleHistoryVersion($articleData);
-            // TODO
-//            dd($request->all());
+        if ($request->input('version') === VersionEnum::ENABLE->value) {
+            $articleHistoryVersion = $this->createArticleHistoryVersion($articleData, $article->id);
+            if($articleHistoryVersion){
+                return response()->json(['status' => '保存版本成功']);
+            }
         }
 
         $article->update($articleData);
@@ -130,16 +133,26 @@ class ArticleController extends Controller
     }
 
     /**
-     * 保存历史版本
      * @param $articleData
+     * @param $articleId
      * @return ArticleHistoryVersion
      */
-    public function createArticleHistoryVersion($articleData)
+    public function createArticleHistoryVersion($articleData, $articleId): ArticleHistoryVersion
     {
-         $articleHistoryVersion = new ArticleHistoryVersion();
-         $articleHistoryVersion->fill([]);
-         $articleHistoryVersion->save();
-         return $articleHistoryVersion;
+        /** @var Article $article */
+        $article = Article::query()->where('id', $articleId)->first();
+        $articleHistoryVersion = new ArticleHistoryVersion();
+        $articleHistoryVersion->fill([
+            'user_id' => $articleData['user_id'],
+            'article_id' => $articleId,
+            'title' => $articleData['title'],
+            'subtitle' => $articleData['subtitle'],
+            'origin_body' => $article->body,
+            'target_body' => $articleData['body'],
+            'status' => ArticleStatusEnum::ENABLE->value,
+         ]);
+        $articleHistoryVersion->save();
+        return $articleHistoryVersion;
     }
 
     /**
@@ -216,7 +229,6 @@ class ArticleController extends Controller
         ]));
 
 
-
         $article->save();
         return Redirect::route('articles.show', $article);
     }
@@ -229,7 +241,8 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        return Inertia::render('Article/Edit', compact('article'));
+        $articleHistoryVersionsList = ArticleHistoryVersion::query()->where('article_id', $article->id)->paginate(2);
+        return Inertia::render('Article/Edit', compact('article', 'articleHistoryVersionsList'));
     }
 
 
@@ -243,7 +256,7 @@ class ArticleController extends Controller
     {
         try {
 
-            //删除的文章图片放入零食存储区
+            //删除的文章图片放入临时存储区
 
 
             Article::query()->where('id', $article->id)->delete();

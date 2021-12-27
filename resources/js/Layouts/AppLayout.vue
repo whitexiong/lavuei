@@ -173,9 +173,23 @@
         <!-- Responsive Navigation Menu -->
         <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
           <div class="pt-2 pb-3 space-y-1">
+
             <jet-responsive-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
-              Dashboard
+              主页
             </jet-responsive-nav-link>
+
+            <jet-responsive-nav-link :href="route('users.index')" :active="route().current('users.*')">
+              用户管理
+            </jet-responsive-nav-link>
+
+            <jet-responsive-nav-link :href="route('tags.index')" :active="route().current('tags.*')">
+              标签管理
+            </jet-responsive-nav-link>
+
+            <jet-responsive-nav-link :href="route('articles.index')" :active="route().current('article.*')">
+              文章管理
+            </jet-responsive-nav-link>
+            
           </div>
 
           <!-- Responsive Settings Options -->
@@ -257,7 +271,7 @@
 
       <!-- Page Heading -->
       <header class="bg-white shadow" v-if="$slots.header">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
           <slot name="header"></slot>
         </div>
       </header>
@@ -268,6 +282,11 @@
       </main>
     </div>
   </div>
+
+  <footer class="bg-grey-darkest text-white p-2">
+    <div class="flex flex-1 mx-auto">&copy; My Design</div>
+  </footer>
+
 </template>
 
 <script>

@@ -19,10 +19,8 @@ class ArticleHistoryVersionTable extends Migration
             $table->integer('article_id')->comment('文章id');
             $table->string('title')->comment('标题');
             $table->string('subtitle')->comment('副标题');
-            $table->text('body')->comment('文章内容');
-            $table->text('add_body')->comment('添加内容');
-            $table->text('delete_body')->comment('删除内容');
-            $table->tinyInteger('type')->comment('1:新增; 2: 删除');
+            $table->text('origin_body')->comment('原文本');
+            $table->text('target_body')->comment('新文本');
             $table->tinyInteger('status')->comment('1: 启用 0:禁用');
             $table->timestamps();
         });

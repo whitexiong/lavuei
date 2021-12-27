@@ -15,7 +15,6 @@
       </div>
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg divide-black divide-opacity-25 m-5 mx-24">
 
-
           <mavon-editor ref="editor" class="markdown-body w-full" v-html="rawHtml"></mavon-editor>
         </div>
     </div>
