@@ -4,7 +4,7 @@
     <template #header>
       <button type="submit" v-on:click="viewRendering()"
               class="ml-8 text-sm font-semibold bg-green-500 py-3 px-4 rounded-lg hover:bg-gray-300 hover:text-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 bg-sky-300">
-        使用此版本
+        回复旧版本
       </button>
       <div class="flex items-center justify-between float-right">
         <h2>
