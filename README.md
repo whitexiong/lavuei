@@ -12,6 +12,8 @@
 
 ## About Lavuei
 
+## 更名为 EasyWrite 中文 易写 
+
 > 基于 Laravel8 实现的开源博客， 其用到的技术栈都是目前最新也是入门最容器的技术栈，并且在这个全栈框架中我们使用 InertiaJs (惯性) 来当做胶水语言而 Vue 在项目中退化为了纯视图层。
 
 - Laravel Jetstream
@@ -37,6 +39,21 @@
 - gateway-worker
 
 > workerman 是一款优秀的处理高并发的框架，项目中可实现了多人协同编辑示例
+
+
+- v-viewer
+
+> v-viewer.js 使用 vue3 版本帮助渲染 html 中的图片
+
+
+- admin-one-vue-tailwind
+
+> 由作者@justboil 的后台管理模板，其中的黑暗模式也是按照其中的方式进行引入
+
+
+- docsearch
+
+> 一款帮助搜索文档搜索神器，其中 Tailwind CSS 也是使用了其优雅的搜索功能只需要 CTRL+K 即可进行全文档搜索
 
 ## 目录结构
 

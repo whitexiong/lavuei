@@ -29,10 +29,18 @@
         "vue-loader": "^16.1.2"
     },
     "dependencies": {
+        "@docsearch/js": "^3.0.0-alpha.42",
+        "@mdi/js": "^6.4.95",
         "autoprefixer": "10.2.5",
+        "chart.js": "^3.6.0",
+        "core-js": "^3.6.5",
         "highlight": "^0.2.4",
         "marked": "^4.0.7",
         "mavon-editor": "^3.0.0-beta",
-        "v-code-diff": "^0.3.8"
+        "numeral": "^2.0.6",
+        "v-code-diff": "^0.3.8",
+        "v-viewer": "^3.0.10",
+        "vue-router": "^4.0.0-0",
+        "vuex": "^4.0.0-0"
     }
 }

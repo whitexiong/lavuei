@@ -55,5 +55,8 @@ Route::middleware(['auth:sanctum','verified'])->prefix('admin')->group(function 
 Route::middleware(['auth:sanctum','verified'])->prefix('/')->group(function () {
 
     Route::get('',[HomeController::class,'index'])->name('home.index');
+    Route::get('home/login',[HomeController::class,'login'])->name('home.login');
+    Route::get('home/register',[HomeController::class,'register'])->name('home.register');
+    Route::get('home/{article}/article-detail',[HomeController::class,'articleDetail'])->name('home.article-detail');
 
 });

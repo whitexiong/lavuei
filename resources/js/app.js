@@ -3,9 +3,17 @@ require('./bootstrap');
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
+import store from './store'
+import { darkModeKey } from '@/config.js'
 
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
+
+const localStorageDarkModeValue = localStorage.getItem(darkModeKey)
+
+if ((localStorageDarkModeValue === null && window.matchMedia('(prefers-color-scheme: dark)').matches) || localStorageDarkModeValue === '1') {
+    store.dispatch('darkMode')
+}
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

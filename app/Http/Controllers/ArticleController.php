@@ -43,7 +43,6 @@ class ArticleController extends Controller
             ])->paginate(10);
 
 
-
         return Inertia::render('Article/Index', compact('articles'));
     }
 
@@ -65,6 +64,7 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
+
         $request->validate([
             'user_id' => ['required', Rule::exists(User::new()->getTable(), 'id')],
 //            'categories_id' => ['required'],
@@ -84,7 +84,7 @@ class ArticleController extends Controller
         ]);
 
         // 处理图片
-        $partner = '!\[(.*)\]\((.+)\)!';  // 匹配 markdown 中的图片地址
+        $partner = '!\!\[(.*)\]\((.+)\)!';  // 匹配 markdown 中的图片地址
         preg_match_all($partner, $article->body, $match);
 
         if ($match !== null) {
@@ -123,7 +123,7 @@ class ArticleController extends Controller
         // 判断是否是保存历史版本
         if ($request->input('version') === VersionEnum::ENABLE->value) {
             $articleHistoryVersion = $this->createArticleHistoryVersion($articleData, $article->id);
-            if($articleHistoryVersion){
+            if ($articleHistoryVersion) {
                 return response()->json(['status' => '保存版本成功']);
             }
         }
@@ -150,7 +150,7 @@ class ArticleController extends Controller
             'origin_body' => $article->body,
             'target_body' => $articleData['body'],
             'status' => ArticleStatusEnum::ENABLE->value,
-         ]);
+        ]);
         $articleHistoryVersion->save();
         return $articleHistoryVersion;
     }
@@ -255,10 +255,7 @@ class ArticleController extends Controller
     public function destroy(Article $article): RedirectResponse
     {
         try {
-
             //删除的文章图片放入临时存储区
-
-
             Article::query()->where('id', $article->id)->delete();
 
         } catch (Exception $exception) {
