@@ -1,0 +1,74 @@
+/* NProgress, (c) 2013, 2014 Rico Sta. Cruz - http://ricostacruz.com/nprogress
+ * @license MIT */
+
+/*!
+  * vue-router v4.0.12
+  * (c) 2021 Eduardo San Martin Morote
+  * @license MIT
+  */
+
+/*!
+ * Chart.js v3.7.0
+ * https://www.chartjs.org
+ * (c) 2021 Chart.js Contributors
+ * Released under the MIT License
+ */
+
+/*!
+ * Viewer.js v1.10.2
+ * https://fengyuanchen.github.io/viewerjs
+ *
+ * Copyright 2015-present Chen Fengyuan
+ * Released under the MIT license
+ *
+ * Date: 2021-10-22T13:59:51.046Z
+ */
+
+/*!
+ * vuex v4.0.2
+ * (c) 2021 Evan You
+ * @license MIT
+ */
+
+/*! @docsearch/js 3.0.0-alpha.42 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
+
+/*! @preserve
+ * numeral.js
+ * version : 2.0.6
+ * author : Adam Draper
+ * license : MIT
+ * http://adamwdraper.github.com/Numeral-js/
+ */
+
+/*! https://mths.be/punycode v1.4.1 by @mathias */
+
+/**
+ * @Author: HuaChao Chen <chc>
+ * @Date:   2017-06-12T21:06:58+08:00
+ * @Email:  chenhuachaoxyz@gmail.com
+ * @Filename: index.js
+ * @Last modified by:   chc
+ * @Last modified time: 2017-06-12T21:18:15+08:00
+ * @License: MIT
+ * @Copyright: 2017
+ */
+
+/**
+ * @Author: chenhuachao <chc>
+ * @Date:   2017-11-26T15:57:48+08:00
+ * @Email:  chenhuachaoxyz@gmail.com
+ * @Filename: index.js
+ * @Last modified by:   chc
+ * @Last modified time: 2017-11-26T16:00:49+08:00
+ * @License: MIT
+ * @Copyright: 2017
+ */
+
+/**
+ * @license
+ * Lodash <https://lodash.com/>
+ * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */

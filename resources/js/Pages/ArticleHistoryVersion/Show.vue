@@ -128,7 +128,7 @@
 <script>
 import {defineComponent} from 'vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
-import JetPagination from '@/Components/Pagination.vue';
+import JetPagination from '../../Components/Pagination.vue';
 import {CodeDiff} from 'v-code-diff'
 import {mavonEditor} from "mavon-editor"
 import "mavon-editor/dist/css/index.css"

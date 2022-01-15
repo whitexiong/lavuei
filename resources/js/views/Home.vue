@@ -11,19 +11,19 @@ import {
   mdiGithub,
   mdiChartPie
 } from '@mdi/js'
-import * as chartConfig from '@/components/Charts/chart.config.js'
-import LineChart from '@/components/Charts/LineChart.vue'
-import MainSection from '@/components/MainSection.vue'
-import TitleBar from '@/components/TitleBar.vue'
-import HeroBar from '@/components/HeroBar.vue'
-import CardWidget from '@/components/CardWidget.vue'
-import CardComponent from '@/components/CardComponent.vue'
-import ClientsTable from '@/components/ClientsTable.vue'
-import Notification from '@/components/Notification.vue'
-import JbButton from '@/components/JbButton.vue'
-import CardTransactionBar from '@/components/CardTransactionBar.vue'
-import CardClientBar from '@/components/CardClientBar.vue'
-import TitleSubBar from '@/components/TitleSubBar.vue'
+import * as chartConfig from '../Components/Charts/chart.config.js'
+import LineChart from '../Components/Charts/LineChart.vue'
+import MainSection from '../Components/MainSection.vue'
+import TitleBar from '../Components/TitleBar.vue'
+import HeroBar from '../Components/HeroBar.vue'
+import CardWidget from '../Components/CardWidget.vue'
+import CardComponent from '../Components/CardComponent.vue'
+import ClientsTable from '../Components/ClientsTable.vue'
+import Notification from '../Components/Notification.vue'
+import JbButton from '../Components/JbButton.vue'
+import CardTransactionBar from '../Components/CardTransactionBar.vue'
+import CardClientBar from '../Components/CardClientBar.vue'
+import TitleSubBar from '../Components/TitleSubBar.vue'
 
 const titleStack = ref(['Admin', 'Dashboard'])
 

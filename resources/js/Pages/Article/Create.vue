@@ -79,7 +79,7 @@
 
 <script>
 import {defineComponent} from 'vue'
-import JetButton from '@/Jetstream/Button.vue'
+import JetButton from '../../Jetstream/Button.vue'
 import JetFormSection from '@/Jetstream/FormSection.vue'
 import JetInput from '@/Jetstream/Input.vue'
 import JetInputError from '@/Jetstream/InputError.vue'

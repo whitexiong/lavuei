@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useStore } from 'vuex'
-import MainSection from '@/components/MainSection.vue'
+import MainSection from '../Components/MainSection.vue'
 
 const props = defineProps({
   bg: {

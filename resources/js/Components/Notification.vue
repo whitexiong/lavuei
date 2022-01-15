@@ -3,9 +3,9 @@ import { ref, computed, useSlots } from 'vue'
 import { useStore } from 'vuex'
 import { mdiClose } from '@mdi/js'
 import { colorsBg, colorsBorders, colorsOutline } from '@/colors.js'
-import Level from '@/components/Level.vue'
-import Icon from '@/components/Icon.vue'
-import JbButton from '@/components/JbButton.vue'
+import Level from '../Components/Level.vue'
+import Icon from '../Components/Icon.vue'
+import JbButton from '../Components/JbButton.vue'
 
 const props = defineProps({
   icon: {

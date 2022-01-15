@@ -1,7 +1,7 @@
 <script setup>
 import { mdiUpload } from '@mdi/js'
 import { computed, ref, watch } from 'vue'
-import JbButton from '@/components/JbButton.vue'
+import JbButton from '../Components/JbButton.vue'
 
 const props = defineProps({
   modelValue: {

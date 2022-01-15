@@ -1,10 +1,10 @@
 <script setup>
 import { computed } from 'vue'
 import { mdiCashMinus, mdiCashPlus, mdiReceipt, mdiCreditCardOutline } from '@mdi/js'
-import CardComponent from '@/components/CardComponent.vue'
-import Level from '@/components/Level.vue'
-import Pill from '@/components/Pill.vue'
-import IconRounded from '@/components/IconRounded.vue'
+import CardComponent from '../Components/CardComponent.vue'
+import Level from '../Components/Level.vue'
+import Pill from '../Components/Pill.vue'
+import IconRounded from '../Components/IconRounded.vue'
 
 const props = defineProps({
   amount: {

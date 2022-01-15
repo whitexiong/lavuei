@@ -148,7 +148,7 @@
 import {defineComponent} from 'vue'
 import AppLayout from '@/Layouts/AppLayout.vue';
 import JetButton from '@/Jetstream/Button.vue';
-import JetPagination from '@/Components/Pagination.vue';
+import JetPagination from '../../Components/Pagination.vue';
 
 export default defineComponent({
   components: {

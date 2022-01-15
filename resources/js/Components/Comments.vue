@@ -128,10 +128,10 @@
 <script>
 
 import {defineComponent} from 'vue'
-import Field from '@/components/Field.vue'
-import Control from '@/components/Control.vue'
-import JbButton from '@/components/JbButton.vue'
-import JbButtons from '@/components/JbButtons.vue'
+import Field from '../Components/Field.vue'
+import Control from '../Components/Control.vue'
+import JbButton from '../Components/JbButton.vue'
+import JbButtons from '../Components/JbButtons.vue'
 
 export default defineComponent({
   components: {

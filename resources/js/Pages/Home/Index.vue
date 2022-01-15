@@ -67,8 +67,8 @@ import {defineComponent} from 'vue'
 import JetNav from '@/Layouts/Nav.vue'
 import HomeRight from '@/Layouts/HomeRight.vue'
 import JetFooter from '@/Layouts/Footer.vue'
-import JetPagination from '@/Components/Pagination.vue';
-import HeroBar from '@/components/HeroBar.vue'
+import JetPagination from '../../Components/Pagination.vue';
+import HeroBar from '../../Components/HeroBar.vue'
 
 
 export default defineComponent({

@@ -48,11 +48,11 @@ import JetFooter from '@/Layouts/Footer.vue'
 import {mavonEditor} from "mavon-editor"
 import "mavon-editor/dist/css/index.css"
 import 'mavon-editor/dist/markdown/github-markdown.min.css'
-import Field from '@/components/Field.vue'
-import Control from '@/components/Control.vue'
-import JbButton from '@/components/JbButton.vue'
-import JbButtons from '@/components/JbButtons.vue'
-import Comments from '@/components/Comments'
+import Field from '../../Components/Field.vue'
+import Control from '../../Components/Control.vue'
+import JbButton from '../../Components/JbButton.vue'
+import JbButtons from '../../Components/JbButtons.vue'
+import Comments from '../../Components/Comments'
 import HomeRight from '@/Layouts/HomeRight'
 import 'viewerjs/dist/viewer.css'
 import {directive as viewer} from "v-viewer"

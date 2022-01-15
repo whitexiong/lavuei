@@ -1,5 +1,6 @@
-require('./bootstrap');
+import router from "@/router";
 
+require('./bootstrap');
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
@@ -15,12 +16,14 @@ if ((localStorageDarkModeValue === null && window.matchMedia('(prefers-color-sch
     store.dispatch('darkMode')
 }
 
+
 createInertiaApp({
+    store: (store) => `${store}`,
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => require(`./Pages/${name}.vue`),
-    setup({ el, app, props, plugin }) {
+    setup({ el, app, props, plugin}) {
         return createApp({ render: () => h(app, props) })
-            .use(plugin)
+            .use(plugin,store, router)
             .mixin({ methods: { route } })
             .mount(el);
     },

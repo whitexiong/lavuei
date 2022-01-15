@@ -1,9 +1,9 @@
 <script>
 
 import {defineComponent} from 'vue'
-import CardComponent from '@/components/CardComponent.vue'
-import Field from '@/components/Field.vue'
-import Control from '@/components/Control.vue'
+import CardComponent from '../Components/CardComponent.vue'
+import Field from '../Components/Field.vue'
+import Control from '../Components/Control.vue'
 
 
 const submit = () => {

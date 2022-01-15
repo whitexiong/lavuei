@@ -2,9 +2,11 @@
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 import { mdiMenu } from '@mdi/js'
-import AsideMenuList from '@/components/AsideMenuList.vue'
-import NavBarItem from '@/components/NavBarItem.vue'
-import Icon from '@/components/Icon.vue'
+import AsideMenuList from '../Components/AsideMenuList.vue'
+import NavBarItem from '../Components/NavBarItem.vue'
+import Icon from '../Components/Icon.vue'
+import stores from '../store'
+
 
 defineProps({
   menu: {
@@ -13,16 +15,16 @@ defineProps({
   }
 })
 
-const store = useStore()
+// const store = useStore()
 
-const isFullScreen = computed(() => store.state.isFullScreen)
+const isFullScreen = computed(() => stores.state.isFullScreen)
 
-const isAsideMobileExpanded = computed(() => store.state.isAsideMobileExpanded)
+const isAsideMobileExpanded = computed(() => stores.state.isAsideMobileExpanded)
 
-const isAsideLgActive = computed(() => store.state.isAsideLgActive)
+const isAsideLgActive = computed(() => stores.state.isAsideLgActive)
 
 const asideLgClose = () => {
-  store.dispatch('asideLgToggle', false)
+  stores.dispatch('asideLgToggle', false)
 }
 
 const menuClick = (event, item) => {

@@ -2,12 +2,12 @@
 import { mdiCog } from '@mdi/js'
 import { computed } from 'vue'
 import { useStore } from 'vuex'
-import CardComponent from '@/components/CardComponent.vue'
-import GrowingNumber from '@/components/GrowingNumber.vue'
-import Icon from '@/components/Icon.vue'
-import Level from '@/components/Level.vue'
-import TrendPill from '@/components/TrendPill.vue'
-import JbButton from '@/components/JbButton.vue'
+import CardComponent from '../Components/CardComponent.vue'
+import GrowingNumber from '../Components/GrowingNumber.vue'
+import Icon from '../Components/Icon.vue'
+import Level from '../Components/Level.vue'
+import TrendPill from '../Components/TrendPill.vue'
+import JbButton from '../Components/JbButton.vue'
 
 defineProps({
   number: {

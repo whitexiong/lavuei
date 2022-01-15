@@ -17,29 +17,31 @@ import {
   mdiGithub,
   mdiThemeLightDark
 } from '@mdi/js'
-import NavBarItem from '@/components/NavBarItem.vue'
-import NavBarItemLabel from '@/components/NavBarItemLabel.vue'
-import NavBarMenu from '@/components/NavBarMenu.vue'
-import NavBarMenuDivider from '@/components/NavBarMenuDivider.vue'
-import UserAvatar from '@/components/UserAvatar.vue'
-import Icon from '@/components/Icon.vue'
-import NavBarSearch from '@/components/NavBarSearch.vue'
+import NavBarItem from '../Components/NavBarItem.vue'
+import NavBarItemLabel from '../Components/NavBarItemLabel.vue'
+import NavBarMenu from '../Components/NavBarMenu.vue'
+import NavBarMenuDivider from '../Components/NavBarMenuDivider.vue'
+// import UserAvatar from '../Components/UserAvatar.vue'
+import Icon from '../Components/Icon.vue'
+import NavBarSearch from '../Components/NavBarSearch.vue'
+import stores from '../store'
+
 
 const store = useStore()
 
 const toggleLightDark = () => {
-  store.dispatch('darkMode')
+  stores.dispatch('darkMode')
 }
 
-const isNavBarVisible = computed(() => !store.state.isFullScreen)
+const isNavBarVisible = computed(() => !stores.state.isFullScreen)
 
-const isAsideMobileExpanded = computed(() => store.state.isAsideMobileExpanded)
+const isAsideMobileExpanded = computed(() => stores.state.isAsideMobileExpanded)
 
-const userName = computed(() => store.state.userName)
+const userName = computed(() => stores.state.userName)
 
 const menuToggleMobileIcon = computed(() => isAsideMobileExpanded.value ? mdiBackburger : mdiForwardburger)
 
-const menuToggleMobile = () => store.dispatch('asideMobileToggle')
+const menuToggleMobile = () => stores.dispatch('asideMobileToggle')
 
 const isMenuNavBarActive = ref(false)
 
@@ -50,7 +52,7 @@ const menuNavBarToggle = () => {
 }
 
 const menuOpenLg = () => {
-  store.dispatch('asideLgToggle', true)
+  stores.dispatch('asideLgToggle', true)
 }
 </script>
 

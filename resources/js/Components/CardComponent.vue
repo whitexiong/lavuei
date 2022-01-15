@@ -1,7 +1,7 @@
 <script setup>
 import { mdiCog } from '@mdi/js'
 import { computed } from 'vue'
-import Icon from '@/components/Icon.vue'
+import Icon from '../Components/Icon.vue'
 
 const props = defineProps({
   title: {

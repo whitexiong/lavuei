@@ -1,10 +1,10 @@
 <script setup>
 import { computed } from 'vue'
 import { mdiTrendingDown, mdiTrendingUp, mdiTrendingNeutral } from '@mdi/js'
-import CardComponent from '@/components/CardComponent.vue'
-import Level from '@/components/Level.vue'
-import Pill from '@/components/Pill.vue'
-import UserAvatar from '@/components/UserAvatar.vue'
+import CardComponent from '../Components/CardComponent.vue'
+import Level from '../Components/Level.vue'
+import Pill from '../Components/Pill.vue'
+import UserAvatar from '../Components/UserAvatar.vue'
 
 const props = defineProps({
   name: {

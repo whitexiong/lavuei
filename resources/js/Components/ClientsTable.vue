@@ -2,12 +2,12 @@
 import { computed, ref } from 'vue'
 import { useStore } from 'vuex'
 import { mdiEye, mdiTrashCan } from '@mdi/js'
-import ModalBox from '@/components/ModalBox.vue'
-import CheckboxCell from '@/components/CheckboxCell.vue'
-import Level from '@/components/Level.vue'
-import JbButtons from '@/components/JbButtons.vue'
-import JbButton from '@/components/JbButton.vue'
-import UserAvatar from '@/components/UserAvatar.vue'
+import ModalBox from '../Components/ModalBox.vue'
+import CheckboxCell from '../Components/CheckboxCell.vue'
+import Level from '../Components/Level.vue'
+import JbButtons from '../Components/JbButtons.vue'
+import JbButton from '../Components/JbButton.vue'
+import UserAvatar from '../Components/UserAvatar.vue'
 
 defineProps({
   checkable: Boolean

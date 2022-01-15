@@ -1,7 +1,7 @@
 <script setup>
 import { mdiGithub } from '@mdi/js'
-import Level from '@/components/Level.vue'
-import JbButton from '@/components/JbButton.vue'
+import Level from '../Components/Level.vue'
+import JbButton from '../Components/JbButton.vue'
 
 defineProps({
   titleStack: {

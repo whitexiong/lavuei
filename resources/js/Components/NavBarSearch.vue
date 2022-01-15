@@ -1,5 +1,5 @@
 <script setup>
-import Control from '@/components/Control.vue'
+import Control from '../Components/Control.vue'
 </script>
 
 <template>

@@ -1,3 +1,4 @@
+
 <script setup>
 import { ref, computed } from 'vue'
 import { useStore } from 'vuex'
@@ -12,20 +13,20 @@ import {
   mdiOpenInNew,
   mdiClose
 } from '@mdi/js'
-import MainSection from '@/components/MainSection.vue'
-import HeroBar from '@/components/HeroBar.vue'
-import TitleBar from '@/components/TitleBar.vue'
-import CardComponent from '@/components/CardComponent.vue'
-import JbButtons from '@/components/JbButtons.vue'
-import JbButton from '@/components/JbButton.vue'
-import Notification from '@/components/Notification.vue'
-import Divider from '@/components/Divider.vue'
-import ModalBox from '@/components/ModalBox.vue'
-import TitledSection from '@/components/TitledSection.vue'
-import Field from '@/components/Field.vue'
-import CheckRadioPicker from '@/components/CheckRadioPicker.vue'
-import BottomOtherPagesSection from '@/components/BottomOtherPagesSection.vue'
-import TitleSubBar from '@/components/TitleSubBar.vue'
+import MainSection from '../Components/MainSection.vue'
+import HeroBar from '../Components/HeroBar.vue'
+import TitleBar from '../Components/TitleBar.vue'
+import CardComponent from '../Components/CardComponent.vue'
+import JbButtons from '../Components/JbButtons.vue'
+import JbButton from '../Components/JbButton.vue'
+import Notification from '../Components/Notification.vue'
+import Divider from '../Components/Divider.vue'
+import ModalBox from '../Components/ModalBox.vue'
+import TitledSection from '../Components/TitledSection.vue'
+import Field from '../Components/Field.vue'
+import CheckRadioPicker from '../Components/CheckRadioPicker.vue'
+import BottomOtherPagesSection from '../Components/BottomOtherPagesSection.vue'
+import TitleSubBar from '../Components/TitleSubBar.vue'
 
 const titleStack = ref(['Admin', 'UI Components'])
 
@@ -95,7 +96,7 @@ const darkModeToggle = () => {
         <jb-button
           label="Toggle"
           outline
-          @click="darkModeToggle"
+          ..click="darkModeToggle"
         />
       </div>
     </card-component>
@@ -112,7 +113,7 @@ const darkModeToggle = () => {
         :header-icon="mdiClose"
         class="cursor-pointer md:w-7/12 lg:w-5/12 xl:w-4/12 shadow-2xl md:mx-auto"
         hoverable
-        @click="modalOneActive = true"
+        ..click="modalOneActive = true"
       >
         <div class="space-y-3">
           <p>Click to see in action</p>
@@ -136,7 +137,7 @@ const darkModeToggle = () => {
       <card-component
         class="cursor-pointer md:w-7/12 lg:w-5/12 xl:w-4/12 shadow-2xl md:mx-auto"
         hoverable
-        @click="modalTwoActive = true"
+        ..click="modalTwoActive = true"
       >
         <div class="space-y-3">
           <h1 class="text-2xl">
@@ -158,7 +159,7 @@ const darkModeToggle = () => {
       <card-component
         class="cursor-pointer md:w-7/12 lg:w-5/12 xl:w-4/12 shadow-2xl md:mx-auto"
         hoverable
-        @click="modalThreeActive = true"
+        ..click="modalThreeActive = true"
       >
         <div class="space-y-3">
           <h1 class="text-2xl">

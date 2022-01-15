@@ -2,10 +2,11 @@
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 import menu from '@/menu.js'
-import NavBar from '@/components/NavBar.vue'
-import AsideMenu from '@/components/AsideMenu.vue'
-import FooterBar from '@/components/FooterBar.vue'
-import Overlay from '@/components/Overlay.vue'
+import NavBar from '../Components/NavBar.vue'
+import AsideMenu from '../Components/AsideMenu.vue'
+import FooterBar from '../Components/FooterBar.vue'
+import Overlay from '../Components/Overlay.vue'
+import store from './store'
 
 const store = useStore()
 

@@ -2,11 +2,11 @@
 import { computed, ref } from 'vue'
 import { useStore } from 'vuex'
 import { mdiCheckDecagram } from '@mdi/js'
-import Level from '@/components/Level.vue'
-import UserAvatar from '@/components/UserAvatar.vue'
-import CardComponent from '@/components/CardComponent.vue'
-import CheckRadioPicker from '@/components/CheckRadioPicker.vue'
-import Pill from '@/components/Pill.vue'
+import Level from '../Components/Level.vue'
+import UserAvatar from '../Components/UserAvatar.vue'
+import CardComponent from '../Components/CardComponent.vue'
+import CheckRadioPicker from '../Components/CheckRadioPicker.vue'
+import Pill from '../Components/Pill.vue'
 
 const store = useStore()
 

@@ -1,9 +1,9 @@
 <script setup>
 import {useStore} from 'vuex'
 import {mdiThemeLightDark} from '@mdi/js'
-import NavBarItem from '@/components/NavBarItem.vue'
-import NavBarItemLabel from '@/components/NavBarItemLabel.vue'
-import EasyWriteLogo from '@/components/EasyWriteLogo'
+import NavBarItem from '../Components/NavBarItem.vue'
+import NavBarItemLabel from '../Components/NavBarItemLabel.vue'
+import EasyWriteLogo from '../Components/EasyWriteLogo'
 import stores from '../store'
 
 
@@ -123,7 +123,6 @@ const toggleLightDark = () => {
 import {defineComponent} from "vue";
 import docsearch from '@docsearch/js';
 import '@docsearch/css';
-// import NavBarSearch from '@/components/NavBarItem.vue';
 
 
 export default defineComponent({

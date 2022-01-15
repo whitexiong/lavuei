@@ -2,16 +2,16 @@
 import { mdiThemeLightDark } from '@mdi/js'
 import { useStore } from 'vuex'
 import { computed } from 'vue'
-import Level from '@/components/Level.vue'
-import JbButton from '@/components/JbButton.vue'
+import Level from '../Components/Level.vue'
+import JbButton from '../Components/JbButton.vue'
 
-const store = useStore()
-
-const darkMode = computed(() => store.state.darkMode)
-
-const darkModeToggle = () => {
-  store.dispatch('darkMode')
-}
+// const store = useStore()
+//
+// const darkMode = computed(() => store.state.darkMode)
+//
+// const darkModeToggle = () => {
+//   store.dispatch('darkMode')
+// }
 </script>
 
 <template>

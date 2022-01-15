@@ -1,7 +1,7 @@
 <script setup>
 import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
 import { useStore } from 'vuex'
-import ControlIcon from '@/components/ControlIcon.vue'
+import ControlIcon from '../Components/ControlIcon.vue'
 
 const props = defineProps({
   name: {

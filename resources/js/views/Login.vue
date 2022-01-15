@@ -2,14 +2,14 @@
 import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import { mdiAccount, mdiAsterisk } from '@mdi/js'
-import FullScreenSection from '@/components/FullScreenSection.vue'
-import CardComponent from '@/components/CardComponent.vue'
-import CheckRadioPicker from '@/components/CheckRadioPicker.vue'
-import Field from '@/components/Field.vue'
-import Control from '@/components/Control.vue'
-import Divider from '@/components/Divider.vue'
-import JbButton from '@/components/JbButton.vue'
-import JbButtons from '@/components/JbButtons.vue'
+import FullScreenSection from '../Components/FullScreenSection.vue'
+import CardComponent from '../Components/CardComponent.vue'
+import CheckRadioPicker from '../Components/CheckRadioPicker.vue'
+import Field from '../Components/Field.vue'
+import Control from '../Components/Control.vue'
+import Divider from '../Components/Divider.vue'
+import JbButton from '../Components/JbButton.vue'
+import JbButtons from '../Components/JbButtons.vue'
 
 const form = reactive({
   login: 'john.doe',

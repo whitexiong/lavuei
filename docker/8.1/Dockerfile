@@ -7,8 +7,11 @@ ARG NODE_VERSION=16
 
 WORKDIR /var/www/html
 
+
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ=UTC
+ENV CHOKIDAR_USEPOLLING=true
+
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 

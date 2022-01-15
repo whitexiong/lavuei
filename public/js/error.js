@@ -1,9 +1,9 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["error"],{
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FullScreenSection.vue?vue&type=script&setup=true&lang=js":
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/FullScreenSection.vue?vue&type=script&setup=true&lang=js":
 /*!**********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FullScreenSection.vue?vue&type=script&setup=true&lang=js ***!
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/FullScreenSection.vue?vue&type=script&setup=true&lang=js ***!
   \**********************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -13,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
-/* harmony import */ var _components_MainSection_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/MainSection.vue */ "./resources/js/components/MainSection.vue");
+/* harmony import */ var _Components_MainSection_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Components/MainSection.vue */ "./resources/js/Components/MainSection.vue");
 
 
 
@@ -54,7 +54,7 @@ __webpack_require__.r(__webpack_exports__);
       componentClass: componentClass,
       computed: vue__WEBPACK_IMPORTED_MODULE_0__.computed,
       useStore: vuex__WEBPACK_IMPORTED_MODULE_2__.useStore,
-      MainSection: _components_MainSection_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+      MainSection: _Components_MainSection_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -76,11 +76,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _components_FullScreenSection_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/components/FullScreenSection.vue */ "./resources/js/components/FullScreenSection.vue");
-/* harmony import */ var _components_CardComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/CardComponent.vue */ "./resources/js/components/CardComponent.vue");
-/* harmony import */ var _components_Divider_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/Divider.vue */ "./resources/js/components/Divider.vue");
-/* harmony import */ var _components_JbButton_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/JbButton.vue */ "./resources/js/components/JbButton.vue");
-/* harmony import */ var _components_JbButtons_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/JbButtons.vue */ "./resources/js/components/JbButtons.vue");
+/* harmony import */ var _Components_FullScreenSection_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Components/FullScreenSection.vue */ "./resources/js/Components/FullScreenSection.vue");
+/* harmony import */ var _Components_CardComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Components/CardComponent.vue */ "./resources/js/Components/CardComponent.vue");
+/* harmony import */ var _Components_Divider_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Components/Divider.vue */ "./resources/js/Components/Divider.vue");
+/* harmony import */ var _Components_JbButton_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Components/JbButton.vue */ "./resources/js/Components/JbButton.vue");
+/* harmony import */ var _Components_JbButtons_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/JbButtons.vue */ "./resources/js/Components/JbButtons.vue");
 
 
 
@@ -91,11 +91,11 @@ __webpack_require__.r(__webpack_exports__);
     var expose = _ref.expose;
     expose();
     var __returned__ = {
-      FullScreenSection: _components_FullScreenSection_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-      CardComponent: _components_CardComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-      Divider: _components_Divider_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-      JbButton: _components_JbButton_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-      JbButtons: _components_JbButtons_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+      FullScreenSection: _Components_FullScreenSection_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+      CardComponent: _Components_CardComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+      Divider: _Components_Divider_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+      JbButton: _Components_JbButton_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+      JbButtons: _Components_JbButtons_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -107,9 +107,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FullScreenSection.vue?vue&type=template&id=3180aaa2":
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/FullScreenSection.vue?vue&type=template&id=3d90a262":
 /*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FullScreenSection.vue?vue&type=template&id=3180aaa2 ***!
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/FullScreenSection.vue?vue&type=template&id=3d90a262 ***!
   \***************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -200,9 +200,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./resources/js/components/FullScreenSection.vue":
+/***/ "./resources/js/Components/FullScreenSection.vue":
 /*!*******************************************************!*\
-  !*** ./resources/js/components/FullScreenSection.vue ***!
+  !*** ./resources/js/Components/FullScreenSection.vue ***!
   \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -210,15 +210,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _FullScreenSection_vue_vue_type_template_id_3180aaa2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FullScreenSection.vue?vue&type=template&id=3180aaa2 */ "./resources/js/components/FullScreenSection.vue?vue&type=template&id=3180aaa2");
-/* harmony import */ var _FullScreenSection_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FullScreenSection.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/FullScreenSection.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _FullScreenSection_vue_vue_type_template_id_3d90a262__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FullScreenSection.vue?vue&type=template&id=3d90a262 */ "./resources/js/Components/FullScreenSection.vue?vue&type=template&id=3d90a262");
+/* harmony import */ var _FullScreenSection_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FullScreenSection.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Components/FullScreenSection.vue?vue&type=script&setup=true&lang=js");
 /* harmony import */ var _var_www_html_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_var_www_html_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_FullScreenSection_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_FullScreenSection_vue_vue_type_template_id_3180aaa2__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/FullScreenSection.vue"]])
+const __exports__ = /*#__PURE__*/(0,_var_www_html_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_FullScreenSection_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_FullScreenSection_vue_vue_type_template_id_3d90a262__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Components/FullScreenSection.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -254,9 +254,9 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/FullScreenSection.vue?vue&type=script&setup=true&lang=js":
+/***/ "./resources/js/Components/FullScreenSection.vue?vue&type=script&setup=true&lang=js":
 /*!******************************************************************************************!*\
-  !*** ./resources/js/components/FullScreenSection.vue?vue&type=script&setup=true&lang=js ***!
+  !*** ./resources/js/Components/FullScreenSection.vue?vue&type=script&setup=true&lang=js ***!
   \******************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -264,7 +264,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_FullScreenSection_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_FullScreenSection_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./FullScreenSection.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FullScreenSection.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_FullScreenSection_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./FullScreenSection.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/FullScreenSection.vue?vue&type=script&setup=true&lang=js");
  
 
 /***/ }),
@@ -284,17 +284,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/FullScreenSection.vue?vue&type=template&id=3180aaa2":
+/***/ "./resources/js/Components/FullScreenSection.vue?vue&type=template&id=3d90a262":
 /*!*************************************************************************************!*\
-  !*** ./resources/js/components/FullScreenSection.vue?vue&type=template&id=3180aaa2 ***!
+  !*** ./resources/js/Components/FullScreenSection.vue?vue&type=template&id=3d90a262 ***!
   \*************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_FullScreenSection_vue_vue_type_template_id_3180aaa2__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_FullScreenSection_vue_vue_type_template_id_3d90a262__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_FullScreenSection_vue_vue_type_template_id_3180aaa2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./FullScreenSection.vue?vue&type=template&id=3180aaa2 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FullScreenSection.vue?vue&type=template&id=3180aaa2");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_FullScreenSection_vue_vue_type_template_id_3d90a262__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./FullScreenSection.vue?vue&type=template&id=3d90a262 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/FullScreenSection.vue?vue&type=template&id=3d90a262");
 
 
 /***/ }),

@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from 'vue'
-import TitleBar from '@/components/TitleBar.vue'
-import HeroBar from '@/components/HeroBar.vue'
-import TitledSection from '@/components/TitledSection.vue'
-import MainSection from '@/components/MainSection.vue'
-import BottomOtherPagesSection from '@/components/BottomOtherPagesSection.vue'
+import TitleBar from '../Components/TitleBar.vue'
+import HeroBar from '../Components/HeroBar.vue'
+import TitledSection from '../Components/TitledSection.vue'
+import MainSection from '../Components/MainSection.vue'
+import BottomOtherPagesSection from '../Components/BottomOtherPagesSection.vue'
 
 const titleStack = ref(['Admin', 'Responsive layout'])
 </script>

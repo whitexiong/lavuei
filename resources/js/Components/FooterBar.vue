@@ -1,8 +1,8 @@
 <script setup>
 import { computed } from 'vue'
 import { useStore } from 'vuex'
-import Level from '@/components/Level.vue'
-import JbLogo from '@/components/JbLogo.vue'
+import Level from '../Components/Level.vue'
+import JbLogo from '../Components/JbLogo.vue'
 
 const store = useStore()
 

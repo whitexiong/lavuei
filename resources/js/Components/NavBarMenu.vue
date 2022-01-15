@@ -1,8 +1,8 @@
 <script setup>
 import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
 import { mdiChevronUp, mdiChevronDown } from '@mdi/js'
-import NavBarItem from '@/components/NavBarItem.vue'
-import Icon from '@/components/Icon.vue'
+import NavBarItem from '../Components/NavBarItem.vue'
+import Icon from '../Components/Icon.vue'
 
 defineProps({
   hasDivider: {
