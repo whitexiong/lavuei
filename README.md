@@ -66,7 +66,14 @@
 
     composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
+> 注意在 WSL2 如果放在 /mnt/c 会影响 IO 性能建议放在 ~ 下
+
+    cd ~
+    su root
+    cd /home/www
+
 #### 注意环境中已经配置为 PHP8.1 版本并且在可使用 XDEBUG 进行调试
+
 
 #### 上传文件中权限问题在 .env 中添加
 
@@ -112,6 +119,14 @@
 - 分组管理
 - 权限认证
 - 评论系统
+
+## 分支说明
+
+- main 分支开发环境
+- test 测试环境
+
+> [测试环境在线地址](https://27630f6i27.qicp.vip)。 需要用户自己注册邮箱
+
 
 
 ### 创建 policy 策略
