@@ -13,8 +13,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
 /* harmony import */ var _mdi_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdi/js */ "./node_modules/@mdi/js/mdi.js");
-/* harmony import */ var _Components_TitledSection_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Components/TitledSection.vue */ "./resources/js/Components/TitledSection.vue");
-/* harmony import */ var _Components_Icon_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Components/Icon.vue */ "./resources/js/Components/Icon.vue");
+/* harmony import */ var _Components_TitledSection_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/TitledSection.vue */ "./resources/js/Components/TitledSection.vue");
+/* harmony import */ var _Components_Icon_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Icon.vue */ "./resources/js/Components/Icon.vue");
 
 
 
@@ -334,19 +334,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
-/* harmony import */ var _mdi_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mdi/js */ "./node_modules/@mdi/js/mdi.js");
-/* harmony import */ var _Components_MainSection_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Components/MainSection.vue */ "./resources/js/Components/MainSection.vue");
-/* harmony import */ var _Components_CardComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Components/CardComponent.vue */ "./resources/js/Components/CardComponent.vue");
-/* harmony import */ var _Components_TitleBar_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Components/TitleBar.vue */ "./resources/js/Components/TitleBar.vue");
-/* harmony import */ var _Components_Divider_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/Divider.vue */ "./resources/js/Components/Divider.vue");
-/* harmony import */ var _Components_Field_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Components/Field.vue */ "./resources/js/Components/Field.vue");
-/* harmony import */ var _Components_Control_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Components/Control.vue */ "./resources/js/Components/Control.vue");
-/* harmony import */ var _Components_FilePicker_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Components/FilePicker.vue */ "./resources/js/Components/FilePicker.vue");
-/* harmony import */ var _Components_JbButton_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Components/JbButton.vue */ "./resources/js/Components/JbButton.vue");
-/* harmony import */ var _Components_BottomOtherPagesSection_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Components/BottomOtherPagesSection.vue */ "./resources/js/Components/BottomOtherPagesSection.vue");
-/* harmony import */ var _Components_JbButtons_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Components/JbButtons.vue */ "./resources/js/Components/JbButtons.vue");
-/* harmony import */ var _Components_UserCard_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Components/UserCard.vue */ "./resources/js/Components/UserCard.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var _mdi_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mdi/js */ "./node_modules/@mdi/js/mdi.js");
+/* harmony import */ var _Components_MainSection_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/MainSection.vue */ "./resources/js/Components/MainSection.vue");
+/* harmony import */ var _Components_CardComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/CardComponent.vue */ "./resources/js/Components/CardComponent.vue");
+/* harmony import */ var _Components_TitleBar_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/TitleBar.vue */ "./resources/js/Components/TitleBar.vue");
+/* harmony import */ var _Components_Divider_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Divider.vue */ "./resources/js/Components/Divider.vue");
+/* harmony import */ var _Components_Field_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/Field.vue */ "./resources/js/Components/Field.vue");
+/* harmony import */ var _Components_Control_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Components/Control.vue */ "./resources/js/Components/Control.vue");
+/* harmony import */ var _Components_FilePicker_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Components/FilePicker.vue */ "./resources/js/Components/FilePicker.vue");
+/* harmony import */ var _Components_JbButton_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Components/JbButton.vue */ "./resources/js/Components/JbButton.vue");
+/* harmony import */ var _Components_BottomOtherPagesSection_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/Components/BottomOtherPagesSection.vue */ "./resources/js/Components/BottomOtherPagesSection.vue");
+/* harmony import */ var _Components_JbButtons_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @/Components/JbButtons.vue */ "./resources/js/Components/JbButtons.vue");
+/* harmony import */ var _Components_UserCard_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @/Components/UserCard.vue */ "./resources/js/Components/UserCard.vue");
+/* harmony import */ var _Components_NavBar_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @/Components/NavBar.vue */ "./resources/js/Components/NavBar.vue");
+
 
 
 
@@ -365,7 +367,7 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_12__.useStore)();
+    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_13__.useStore)();
     var titleStack = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(['Admin', 'Profile']);
     var profileForm = (0,vue__WEBPACK_IMPORTED_MODULE_0__.reactive)({
       name: store.state.userName,
@@ -393,13 +395,13 @@ __webpack_require__.r(__webpack_exports__);
       submitPass: submitPass,
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
       reactive: vue__WEBPACK_IMPORTED_MODULE_0__.reactive,
-      useStore: vuex__WEBPACK_IMPORTED_MODULE_12__.useStore,
-      mdiAccount: _mdi_js__WEBPACK_IMPORTED_MODULE_13__.mdiAccount,
-      mdiAccountCircle: _mdi_js__WEBPACK_IMPORTED_MODULE_13__.mdiAccountCircle,
-      mdiLock: _mdi_js__WEBPACK_IMPORTED_MODULE_13__.mdiLock,
-      mdiMail: _mdi_js__WEBPACK_IMPORTED_MODULE_13__.mdiMail,
-      mdiAsterisk: _mdi_js__WEBPACK_IMPORTED_MODULE_13__.mdiAsterisk,
-      mdiFormTextboxPassword: _mdi_js__WEBPACK_IMPORTED_MODULE_13__.mdiFormTextboxPassword,
+      useStore: vuex__WEBPACK_IMPORTED_MODULE_13__.useStore,
+      mdiAccount: _mdi_js__WEBPACK_IMPORTED_MODULE_14__.mdiAccount,
+      mdiAccountCircle: _mdi_js__WEBPACK_IMPORTED_MODULE_14__.mdiAccountCircle,
+      mdiLock: _mdi_js__WEBPACK_IMPORTED_MODULE_14__.mdiLock,
+      mdiMail: _mdi_js__WEBPACK_IMPORTED_MODULE_14__.mdiMail,
+      mdiAsterisk: _mdi_js__WEBPACK_IMPORTED_MODULE_14__.mdiAsterisk,
+      mdiFormTextboxPassword: _mdi_js__WEBPACK_IMPORTED_MODULE_14__.mdiFormTextboxPassword,
       MainSection: _Components_MainSection_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
       CardComponent: _Components_CardComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
       TitleBar: _Components_TitleBar_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -410,7 +412,8 @@ __webpack_require__.r(__webpack_exports__);
       JbButton: _Components_JbButton_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
       BottomOtherPagesSection: _Components_BottomOtherPagesSection_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
       JbButtons: _Components_JbButtons_vue__WEBPACK_IMPORTED_MODULE_10__["default"],
-      UserCard: _Components_UserCard_vue__WEBPACK_IMPORTED_MODULE_11__["default"]
+      UserCard: _Components_UserCard_vue__WEBPACK_IMPORTED_MODULE_11__["default"],
+      NavBar: _Components_NavBar_vue__WEBPACK_IMPORTED_MODULE_12__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -764,7 +767,7 @@ var _hoisted_1 = {
   "class": "grid grid-cols-1 lg:grid-cols-2 gap-6"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TitleBar"], {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["NavBar"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TitleBar"], {
     "title-stack": $setup.titleStack
   }, null, 8
   /* PROPS */

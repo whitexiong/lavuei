@@ -1,8 +1,8 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { mdiGithub } from '@mdi/js'
-import TitledSection from '../Components/TitledSection.vue'
-import Icon from '../Components/Icon.vue'
+import TitledSection from '@/Components/TitledSection.vue'
+import Icon from '@/Components/Icon.vue'
 
 const router = useRouter()
 

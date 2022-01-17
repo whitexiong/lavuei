@@ -75,7 +75,7 @@ const activeClass = computed(() => {
 </script>
 
 <template>
-  <component
+  <Link
     :is="is"
     :class="componentClass"
     :to="to"
@@ -83,5 +83,5 @@ const activeClass = computed(() => {
     :exact-active-class="activeClass"
   >
     <slot />
-  </component>
+  </Link>
 </template>

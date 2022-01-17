@@ -19,7 +19,12 @@ mix.js('resources/js/app.js', 'public/js').vue()
         require('postcss-import'),
         require('tailwindcss'),
     ])
+    .webpackConfig(require('./webpack.config'));
 
 
+mix.browserSync({
+    proxy: 'http://lavue.test:80',
+    open: false,
+});
 mix.version();
 mix.disableNotifications();

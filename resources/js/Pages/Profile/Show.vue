@@ -1,64 +1,73 @@
 <template>
-    <app-layout title="Profile">
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Profile
-            </h2>
-        </template>
 
-        <div>
-            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                <div v-if="$page.props.jetstream.canUpdateProfileInformation">
-                    <update-profile-information-form :user="$page.props.user" />
+  <nav-bar/>
 
-                    <jet-section-border />
-                </div>
+  <div
+      class="grid grid-cols-6  flex min-h-screen bg-gray-50 py-8 flex flex-col justify-center relative  lg:py-12 dark:border-gray-50/[0.06] bg-white supports-backdrop-blur:bg-white/95 dark:bg-gray-500">
 
-                <div v-if="$page.props.jetstream.canUpdatePassword">
-                    <update-password-form class="mt-10 sm:mt-0" />
+    <div class="col-span-2 col-start-1">
+      <aside-menu/>
+    </div>
 
-                    <jet-section-border />
-                </div>
+    <div class="col-start-2 col-span-6">
+      <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+        <div v-if="$page.props.jetstream.canUpdateProfileInformation">
+          <update-profile-information-form :user="$page.props.user"/>
 
-                <div v-if="$page.props.jetstream.canManageTwoFactorAuthentication">
-                    <two-factor-authentication-form class="mt-10 sm:mt-0" />
-
-                    <jet-section-border />
-                </div>
-
-                <logout-other-browser-sessions-form :sessions="sessions" class="mt-10 sm:mt-0" />
-
-                <template v-if="$page.props.jetstream.hasAccountDeletionFeatures">
-                    <jet-section-border />
-
-                    <delete-user-form class="mt-10 sm:mt-0" />
-                </template>
-            </div>
+          <jet-section-border/>
         </div>
-    </app-layout>
+
+        <div v-if="$page.props.jetstream.canUpdatePassword">
+          <update-password-form class="mt-10 sm:mt-0"/>
+
+          <jet-section-border/>
+        </div>
+
+        <div v-if="$page.props.jetstream.canManageTwoFactorAuthentication">
+          <two-factor-authentication-form class="mt-10 sm:mt-0"/>
+
+          <jet-section-border/>
+        </div>
+
+        <logout-other-browser-sessions-form :sessions="sessions" class="mt-10 sm:mt-0"/>
+
+        <template v-if="$page.props.jetstream.hasAccountDeletionFeatures">
+          <jet-section-border/>
+
+          <delete-user-form class="mt-10 sm:mt-0"/>
+        </template>
+      </div>
+    </div>
+  </div>
+
 </template>
 
 <script>
-    import { defineComponent } from 'vue'
-    import AppLayout from '@/Layouts/AppLayout.vue'
-    import DeleteUserForm from '@/Pages/Profile/Partials/DeleteUserForm.vue'
-    import JetSectionBorder from '@/Jetstream/SectionBorder.vue'
-    import LogoutOtherBrowserSessionsForm from '@/Pages/Profile/Partials/LogoutOtherBrowserSessionsForm.vue'
-    import TwoFactorAuthenticationForm from '@/Pages/Profile/Partials/TwoFactorAuthenticationForm.vue'
-    import UpdatePasswordForm from '@/Pages/Profile/Partials/UpdatePasswordForm.vue'
-    import UpdateProfileInformationForm from '@/Pages/Profile/Partials/UpdateProfileInformationForm.vue'
+import {defineComponent} from 'vue'
+import AppLayout from '@/Layouts/AppLayout.vue'
+import DeleteUserForm from '@/Pages/Profile/Partials/DeleteUserForm.vue'
+import JetSectionBorder from '@/Jetstream/SectionBorder.vue'
+import LogoutOtherBrowserSessionsForm from '@/Pages/Profile/Partials/LogoutOtherBrowserSessionsForm.vue'
+import TwoFactorAuthenticationForm from '@/Pages/Profile/Partials/TwoFactorAuthenticationForm.vue'
+import UpdatePasswordForm from '@/Pages/Profile/Partials/UpdatePasswordForm.vue'
+import UpdateProfileInformationForm from '@/Pages/Profile/Partials/UpdateProfileInformationForm.vue'
+import NavBar from '@/Components/NavBar.vue'
+import AsideMenu from '@/Components/AsideMenu.vue'
 
-    export default defineComponent({
-        props: ['sessions'],
 
-        components: {
-            AppLayout,
-            DeleteUserForm,
-            JetSectionBorder,
-            LogoutOtherBrowserSessionsForm,
-            TwoFactorAuthenticationForm,
-            UpdatePasswordForm,
-            UpdateProfileInformationForm,
-        },
-    })
+export default defineComponent({
+  props: ['sessions'],
+
+  components: {
+    AppLayout,
+    DeleteUserForm,
+    JetSectionBorder,
+    LogoutOtherBrowserSessionsForm,
+    TwoFactorAuthenticationForm,
+    UpdatePasswordForm,
+    UpdateProfileInformationForm,
+    NavBar,
+    AsideMenu
+  },
+})
 </script>

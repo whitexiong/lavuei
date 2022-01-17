@@ -1,5 +1,5 @@
 <script setup>
-import AsideMenuItem from '../Components/AsideMenuItem.vue'
+import AsideMenuItem from '@/Components/AsideMenuItem.vue'
 
 defineProps({
   isSubmenuList: {

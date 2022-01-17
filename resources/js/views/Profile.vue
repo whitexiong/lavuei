@@ -2,17 +2,19 @@
 import { ref, reactive } from 'vue'
 import { useStore } from 'vuex'
 import { mdiAccount, mdiAccountCircle, mdiLock, mdiMail, mdiAsterisk, mdiFormTextboxPassword } from '@mdi/js'
-import MainSection from '../Components/MainSection.vue'
-import CardComponent from '../Components/CardComponent.vue'
-import TitleBar from '../Components/TitleBar.vue'
-import Divider from '../Components/Divider.vue'
-import Field from '../Components/Field.vue'
-import Control from '../Components/Control.vue'
-import FilePicker from '../Components/FilePicker.vue'
-import JbButton from '../Components/JbButton.vue'
-import BottomOtherPagesSection from '../Components/BottomOtherPagesSection.vue'
-import JbButtons from '../Components/JbButtons.vue'
-import UserCard from '../Components/UserCard.vue'
+import MainSection from '@/Components/MainSection.vue'
+import CardComponent from '@/Components/CardComponent.vue'
+import TitleBar from '@/Components/TitleBar.vue'
+import Divider from '@/Components/Divider.vue'
+import Field from '@/Components/Field.vue'
+import Control from '@/Components/Control.vue'
+import FilePicker from '@/Components/FilePicker.vue'
+import JbButton from '@/Components/JbButton.vue'
+import BottomOtherPagesSection from '@/Components/BottomOtherPagesSection.vue'
+import JbButtons from '@/Components/JbButtons.vue'
+import UserCard from '@/Components/UserCard.vue'
+import NavBar from '@/Components/NavBar.vue'
+
 
 const store = useStore()
 
@@ -39,6 +41,9 @@ const submitPass = () => {
 </script>
 
 <template>
+
+  <nav-bar/>
+
   <title-bar :title-stack="titleStack" />
 
   <user-card />

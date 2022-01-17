@@ -2,35 +2,36 @@
 import { computed, ref } from 'vue'
 import { useStore } from 'vuex'
 import { mdiEye, mdiTrashCan } from '@mdi/js'
-import ModalBox from '../Components/ModalBox.vue'
-import CheckboxCell from '../Components/CheckboxCell.vue'
-import Level from '../Components/Level.vue'
-import JbButtons from '../Components/JbButtons.vue'
-import JbButton from '../Components/JbButton.vue'
-import UserAvatar from '../Components/UserAvatar.vue'
+import ModalBox from '@/Components/ModalBox.vue'
+import CheckboxCell from '@/Components/CheckboxCell.vue'
+import Level from '@/Components/Level.vue'
+import JbButtons from '@/Components/JbButtons.vue'
+import JbButton from '@/Components/JbButton.vue'
+import UserAvatar from '@/Components/UserAvatar.vue'
+import stores from '@/store'
+
 
 defineProps({
   checkable: Boolean
 })
 
-const store = useStore()
 
-const darkMode = computed(() => store.state.darkMode)
+const darkMode = computed(() => stores.state.darkMode)
 
-const items = computed(() => store.state.clients)
+const items = computed(() => stores.state.clients)
 
-const isModalActive = ref(false)
+let isModalActive = ref(false)
 
-const isModalDangerActive = ref(false)
+let isModalDangerActive = ref(false)
 
 const perPage = ref(10)
 
-const currentPage = ref(0)
+let currentPage = ref(0)
 
-const checkedRows = ref([])
+const checkedRows = ref([true])
 
 const itemsPaginated = computed(
-  () => items.value.slice(perPage.value * currentPage.value, perPage.value * (currentPage.value + 1))
+    () => items.value.slice(perPage.value * currentPage.value, perPage.value * (currentPage.value + 1))
 )
 
 const numPages = computed(() => Math.ceil(items.value.length / perPage.value))
@@ -70,31 +71,31 @@ const checked = (isChecked, client) => {
 
 <template>
   <modal-box
-    v-model="isModalActive"
-    title="Sample modal"
+      v-model="isModalActive"
+      title="Sample modal"
   >
     <p>Lorem ipsum dolor sit amet <b>adipiscing elit</b></p>
     <p>This is sample modal</p>
   </modal-box>
 
   <modal-box
-    v-model="isModalDangerActive"
-    large-title="Please confirm"
-    button="danger"
-    has-cancel
+      v-model="isModalDangerActive"
+      large-title="Please confirm"
+      button="danger"
+      has-cancel
   >
     <p>Lorem ipsum dolor sit amet <b>adipiscing elit</b></p>
     <p>This is sample modal</p>
   </modal-box>
 
   <div
-    v-if="checkedRows.length"
-    class="bg-gray-50 p-3 dark:bg-gray-800"
+      v-if="checkedRows.length"
+      class="bg-gray-50 p-3 dark:bg-gray-800"
   >
     <span
-      v-for="checkedRow in checkedRows"
-      :key="checkedRow.id"
-      class="inline-block bg-gray-100 px-2 py-1 rounded-sm mr-2 text-sm dark:bg-gray-700"
+        v-for="checkedRow in checkedRows"
+        :key="checkedRow.id"
+        class="inline-block bg-gray-100 px-2 py-1 rounded-sm mr-2 text-sm dark:bg-gray-700"
     >
       {{ checkedRow.name }}
     </span>
@@ -102,91 +103,91 @@ const checked = (isChecked, client) => {
 
   <table>
     <thead>
-      <tr>
-        <th v-if="checkable" />
-        <th />
-        <th>Name</th>
-        <th>Company</th>
-        <th>City</th>
-        <th>Progress</th>
-        <th>Created</th>
-        <th />
-      </tr>
+    <tr>
+      <th v-if="checkable" />
+      <th />
+      <th>Name</th>
+      <th>Company</th>
+      <th>City</th>
+      <th>Progress</th>
+      <th>Created</th>
+      <th />
+    </tr>
     </thead>
     <tbody>
-      <tr
+    <tr
         v-for="client in itemsPaginated"
         :key="client.id"
-      >
-        <checkbox-cell
+    >
+      <checkbox-cell
           v-if="checkable"
           @checked="checked($event, client)"
-        />
-        <td class="image-cell">
-          <user-avatar
+      />
+      <td class="image-cell">
+        <user-avatar
             :username="client.name"
             class="image"
-          />
-        </td>
-        <td data-label="Name">
-          {{ client.name }}
-        </td>
-        <td data-label="Company">
-          {{ client.company }}
-        </td>
-        <td data-label="City">
-          {{ client.city }}
-        </td>
-        <td
+        />
+      </td>
+      <td data-label="Name">
+        {{ client.name }}
+      </td>
+      <td data-label="Company">
+        {{ client.company }}
+      </td>
+      <td data-label="City">
+        {{ client.city }}
+      </td>
+      <td
           data-label="Progress"
           class="progress-cell"
-        >
-          <progress
+      >
+        <progress
             max="100"
             :value="client.progress"
-          >
-            {{ client.progress }}
-          </progress>
-        </td>
-        <td data-label="Created">
-          <small
+        >
+          {{ client.progress }}
+        </progress>
+      </td>
+      <td data-label="Created">
+        <small
             class="text-gray-500 dark:text-gray-400"
             :title="client.created"
-          >{{ client.created }}</small>
-        </td>
-        <td class="actions-cell">
-          <jb-buttons
+        >{{ client.created }}</small>
+      </td>
+      <td class="actions-cell">
+        <jb-buttons
             type="justify-start lg:justify-end"
             no-wrap
-          >
-            <jb-button
+        >
+          <jb-button
               color="success"
               :icon="mdiEye"
               small
               @click="isModalActive = true"
-            />
-            <jb-button
+          />
+          <jb-button
               color="danger"
               :icon="mdiTrashCan"
               small
               @click="isModalDangerActive = true"
-            />
-          </jb-buttons>
-        </td>
-      </tr>
+          />
+        </jb-buttons>
+      </td>
+    </tr>
     </tbody>
   </table>
   <div class="table-pagination">
     <level>
       <jb-buttons>
         <jb-button
-          v-for="page in pagesList"
-          :key="page"
-          :active="page === currentPage"
-          :label="page + 1"
-          :outline="darkMode"
-          small
-          @click="currentPage = page"
+            v-for="page in pagesList"
+            :key="page"
+            :active="page === currentPage"
+            :label="page + 1"
+            :outline="darkMode"
+            small
+            @click="currentPage = page"
         />
       </jb-buttons>
       <small>Page {{ currentPageHuman }} of {{ numPages }}</small>

@@ -166,7 +166,7 @@ import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import {mavonEditor} from "mavon-editor"
 import "mavon-editor/dist/css/index.css"
-import JetPagination from '../../Components/Pagination.vue';
+import JetPagination from '@/Components/Pagination.vue';
 
 
 let ws = new WebSocket("ws://lavue.test:2346");

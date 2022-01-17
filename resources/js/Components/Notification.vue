@@ -1,11 +1,12 @@
 <script setup>
 import { ref, computed, useSlots } from 'vue'
-import { useStore } from 'vuex'
 import { mdiClose } from '@mdi/js'
 import { colorsBg, colorsBorders, colorsOutline } from '@/colors.js'
-import Level from '../Components/Level.vue'
-import Icon from '../Components/Icon.vue'
-import JbButton from '../Components/JbButton.vue'
+import Level from '@/Components/Level.vue'
+import Icon from '@/Components/Icon.vue'
+import JbButton from '@/Components/JbButton.vue'
+import stores from '@/store'
+
 
 const props = defineProps({
   icon: {
@@ -33,9 +34,8 @@ const slots = useSlots()
 
 const hasRightSlot = computed(() => slots.right)
 
-const store = useStore()
 
-const darkMode = computed(() => store.state.darkMode)
+const darkMode = computed(() => stores.state.darkMode)
 </script>
 
 <template>

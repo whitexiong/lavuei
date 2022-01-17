@@ -1,7 +1,7 @@
 <script setup>
 import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
-import { useStore } from 'vuex'
-import ControlIcon from '../Components/ControlIcon.vue'
+import ControlIcon from '@/Components/ControlIcon.vue'
+import stores from '@/store'
 
 const props = defineProps({
   name: {
@@ -71,7 +71,7 @@ const computedType = computed(() => props.options ? 'select' : props.type)
 
 const controlIconH = computed(() => props.type === 'textarea' ? 'h-full' : 'h-12')
 
-const store = useStore()
+// const stores = useStore()
 
 const inputEl = ref(null)
 
@@ -86,10 +86,10 @@ if (props.ctrlKFocus) {
   }
 
   onMounted(() => {
-    if (!store.state.isFieldFocusRegistered) {
+    if (!stores.state.isFieldFocusRegistered) {
       window.addEventListener('keydown', fieldFocusHook)
 
-      store.commit('basic', {
+      stores.commit('basic', {
         key: 'isFieldFocusRegistered',
         value: true
       })
@@ -101,7 +101,7 @@ if (props.ctrlKFocus) {
   onBeforeUnmount(() => {
     window.removeEventListener('keydown', fieldFocusHook)
 
-    store.commit('basic', {
+    stores.commit('basic', {
       key: 'isFieldFocusRegistered',
       value: false
     })

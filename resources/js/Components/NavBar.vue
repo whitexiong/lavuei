@@ -1,33 +1,30 @@
 <script setup>
-import { computed, ref } from 'vue'
-import { useStore } from 'vuex'
+import {computed, ref} from 'vue'
 import {
-  mdiForwardburger,
-  mdiBackburger,
-  mdiClose,
-  mdiDotsVertical,
-  mdiMenu,
-  mdiClockOutline,
-  mdiCloud,
-  mdiCrop,
   mdiAccount,
+  mdiBackburger,
+  mdiClockOutline,
+  mdiClose,
+  mdiCloud,
   mdiCogOutline,
+  mdiCrop,
+  mdiDotsVertical,
   mdiEmail,
-  mdiLogout,
+  mdiForwardburger,
   mdiGithub,
+  mdiLogout,
+  mdiMenu,
   mdiThemeLightDark
 } from '@mdi/js'
-import NavBarItem from '../Components/NavBarItem.vue'
-import NavBarItemLabel from '../Components/NavBarItemLabel.vue'
-import NavBarMenu from '../Components/NavBarMenu.vue'
-import NavBarMenuDivider from '../Components/NavBarMenuDivider.vue'
-// import UserAvatar from '../Components/UserAvatar.vue'
-import Icon from '../Components/Icon.vue'
-import NavBarSearch from '../Components/NavBarSearch.vue'
-import stores from '../store'
+import NavBarItem from '@/Components/NavBarItem.vue'
+import NavBarItemLabel from '@/Components/NavBarItemLabel.vue'
+import NavBarMenu from '@/Components/NavBarMenu.vue'
+import NavBarMenuDivider from '@/Components/NavBarMenuDivider.vue'
+import UserAvatar from '@/Components/UserAvatar.vue'
+import Icon from '@/Components/Icon.vue'
+import NavBarSearch from '@/Components/NavBarSearch.vue'
+import stores from '@/store'
 
-
-const store = useStore()
 
 const toggleLightDark = () => {
   stores.dispatch('darkMode')
@@ -54,147 +51,175 @@ const menuNavBarToggle = () => {
 const menuOpenLg = () => {
   stores.dispatch('asideLgToggle', true)
 }
+
 </script>
 
 <template>
   <nav
-    v-show="isNavBarVisible"
-    class="top-0 left-0 right-0 fixed flex bg-white h-14 border-b border-gray-100 z-30 w-screen
+      v-show="isNavBarVisible"
+      class="top-0 left-0 right-0 fixed flex bg-white h-14 border-b border-gray-100 z-30 w-screen
     transition-position xl:pl-60 lg:w-auto lg:items-stretch dark:bg-gray-900 dark:border-gray-800"
-    :class="{'ml-60 lg:ml-0':isAsideMobileExpanded}"
+      :class="{'ml-60 lg:ml-0':isAsideMobileExpanded}"
   >
     <div class="flex-1 items-stretch flex h-14">
       <nav-bar-item
-        type="flex lg:hidden"
-        @click.prevent="menuToggleMobile"
+          type="flex lg:hidden"
+          @click.prevent="menuToggleMobile"
       >
         <icon
-          :path="menuToggleMobileIcon"
-          size="24"
+            :path="menuToggleMobileIcon"
+            size="24"
         />
       </nav-bar-item>
       <nav-bar-item
-        type="hidden lg:flex xl:hidden"
-        @click.prevent="menuOpenLg"
+          type="hidden lg:flex xl:hidden"
+          @click.prevent="menuOpenLg"
       >
         <icon
-          :path="mdiMenu"
-          size="24"
+            :path="mdiMenu"
+            size="24"
         />
       </nav-bar-item>
       <nav-bar-item>
-        <nav-bar-search />
+        <nav-bar-search/>
       </nav-bar-item>
     </div>
     <div class="flex-none items-stretch flex h-14 lg:hidden">
       <nav-bar-item @click.prevent="menuNavBarToggle">
         <icon
-          :path="menuNavBarToggleIcon"
-          size="24"
+            :path="menuNavBarToggleIcon"
+            size="24"
         />
       </nav-bar-item>
     </div>
     <div
-      class="absolute w-screen top-14 left-0 bg-white shadow
+        class="absolute w-screen top-14 left-0 bg-white shadow
         lg:w-auto lg:items-stretch lg:flex lg:grow lg:static lg:border-b-0 lg:overflow-visible lg:shadow-none dark:bg-gray-900"
-      :class="[isMenuNavBarActive ? 'block' : 'hidden']"
+        :class="[isMenuNavBarActive ? 'block' : 'hidden']"
     >
       <div
-        class="max-h-screen-menu overflow-y-auto lg:overflow-visible lg:flex lg:items-stretch lg:justify-end lg:ml-auto"
+          class="max-h-screen-menu overflow-y-auto lg:overflow-visible lg:flex lg:items-stretch lg:justify-end lg:ml-auto"
       >
         <nav-bar-menu has-divider>
           <nav-bar-item-label
-            :icon="mdiMenu"
-            label="Sample menu"
+              :icon="mdiMenu"
+              label="Sample menu"
           />
 
           <template #dropdown>
             <nav-bar-item>
               <nav-bar-item-label
-                :icon="mdiClockOutline"
-                label="Item One"
+                  :icon="mdiClockOutline"
+                  label="Item One"
               />
             </nav-bar-item>
             <nav-bar-item>
               <nav-bar-item-label
-                :icon="mdiCloud"
-                label="Item Two"
+                  :icon="mdiCloud"
+                  label="Item Two"
               />
             </nav-bar-item>
-            <nav-bar-menu-divider />
+            <nav-bar-menu-divider/>
             <nav-bar-item>
               <nav-bar-item-label
-                :icon="mdiCrop"
-                label="Item Last"
+                  :icon="mdiCrop"
+                  label="Item Last"
               />
             </nav-bar-item>
           </template>
         </nav-bar-menu>
         <nav-bar-menu has-divider>
-          <user-avatar class="w-6 h-6 mr-3 inline-flex" />
+          <user-avatar class="w-6 h-6 mr-3 inline-flex"/>
           <div>
-            <span>{{ userName }}</span>
+            <span>{{ $page.props.user.name }}</span>
           </div>
 
           <template #dropdown>
-            <nav-bar-item to="/profile">
+            <nav-bar-item>
+              <jet-dropdown-link :href="route('profile.show')" :icon="mdiAccount" label="My Profile">
+                个人中心
+              </jet-dropdown-link>
+
+              <jet-dropdown-link :href="route('api-tokens.index')" label="My Profile"
+                                 v-if="$page.props.jetstream.hasApiFeatures" icon="mdiAccount">
+                API Tokens
+              </jet-dropdown-link>
+            </nav-bar-item>
+            <nav-bar-item>
               <nav-bar-item-label
-                :icon="mdiAccount"
-                label="My Profile"
+                  :icon="mdiCogOutline"
+                  label="Settings"
               />
             </nav-bar-item>
             <nav-bar-item>
               <nav-bar-item-label
-                :icon="mdiCogOutline"
-                label="Settings"
+                  :icon="mdiEmail"
+                  label="Messages"
               />
             </nav-bar-item>
+            <nav-bar-menu-divider/>
             <nav-bar-item>
-              <nav-bar-item-label
-                :icon="mdiEmail"
-                label="Messages"
-              />
+              <form @submit.prevent="logout">
+                <jet-dropdown-link as="button" :icon="mdiLogout" label="Log Out">
+                  Log Out
+                </jet-dropdown-link>
+              </form>
             </nav-bar-item>
-            <nav-bar-menu-divider />
-            <nav-bar-item>
-              <nav-bar-item-label
-                :icon="mdiLogout"
-                label="Log Out"
-              />
-            </nav-bar-item>
+
           </template>
         </nav-bar-menu>
         <nav-bar-item
-          has-divider
-          is-desktop-icon-only
-          @click.prevent="toggleLightDark"
+            has-divider
+            is-desktop-icon-only
+            @click.prevent="toggleLightDark"
         >
           <nav-bar-item-label
-            :icon="mdiThemeLightDark"
-            label="Light/Dark"
-            is-desktop-icon-only
+              :icon="mdiThemeLightDark"
+              label="Light/Dark"
+              is-desktop-icon-only
           />
 
         </nav-bar-item>
         <nav-bar-item
-          href="https://github.com/justboil/admin-one-vue-tailwind"
-          has-divider
-          is-desktop-icon-only
+            href="https://github.com/justboil/admin-one-vue-tailwind"
+            has-divider
+            is-desktop-icon-only
         >
           <nav-bar-item-label
-            :icon="mdiGithub"
-            label="GitHub"
-            is-desktop-icon-only
+              :icon="mdiGithub"
+              label="GitHub"
+              is-desktop-icon-only
           />
         </nav-bar-item>
         <nav-bar-item is-desktop-icon-only>
           <nav-bar-item-label
-            :icon="mdiLogout"
-            label="Log out"
-            is-desktop-icon-only
+              :icon="mdiLogout"
+              label="Log out"
+              is-desktop-icon-only
           />
         </nav-bar-item>
       </div>
     </div>
   </nav>
 </template>
+
+
+<script>
+import {defineComponent} from 'vue'
+import {Link} from '@inertiajs/inertia-vue3';
+import JetDropdownLink from '@/Jetstream/DropdownLink.vue'
+
+
+
+export default defineComponent({
+  components: {
+    Link,
+    JetDropdownLink
+  },
+  methods: {
+    logout() {
+      this.$inertia.post(route('logout'));
+    },
+  }
+})
+</script>

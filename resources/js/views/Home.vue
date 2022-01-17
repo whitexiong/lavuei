@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref, onMounted } from 'vue'
-import { useStore } from 'vuex'
+import stores from '@/store'
 import {
   mdiAccountMultiple,
   mdiCartOutline,
@@ -11,19 +11,19 @@ import {
   mdiGithub,
   mdiChartPie
 } from '@mdi/js'
-import * as chartConfig from '../Components/Charts/chart.config.js'
-import LineChart from '../Components/Charts/LineChart.vue'
-import MainSection from '../Components/MainSection.vue'
-import TitleBar from '../Components/TitleBar.vue'
-import HeroBar from '../Components/HeroBar.vue'
-import CardWidget from '../Components/CardWidget.vue'
-import CardComponent from '../Components/CardComponent.vue'
-import ClientsTable from '../Components/ClientsTable.vue'
-import Notification from '../Components/Notification.vue'
-import JbButton from '../Components/JbButton.vue'
-import CardTransactionBar from '../Components/CardTransactionBar.vue'
-import CardClientBar from '../Components/CardClientBar.vue'
-import TitleSubBar from '../Components/TitleSubBar.vue'
+import * as chartConfig from '@/Components/Charts/chart.config.js'
+import LineChart from '@/Components/Charts/LineChart.vue'
+import MainSection from '@/Components/MainSection.vue'
+import TitleBar from '@/Components/TitleBar.vue'
+import HeroBar from '@/Components/HeroBar.vue'
+import CardWidget from '@/Components/CardWidget.vue'
+import CardComponent from '@/Components/CardComponent.vue'
+import ClientsTable from '@/Components/ClientsTable.vue'
+import Notification from '@/Components/Notification.vue'
+import JbButton from '@/Components/JbButton.vue'
+import CardTransactionBar from '@/Components/CardTransactionBar.vue'
+import CardClientBar from '@/Components/CardClientBar.vue'
+import TitleSubBar from '@/Components/TitleSubBar.vue'
 
 const titleStack = ref(['Admin', 'Dashboard'])
 
@@ -37,13 +37,13 @@ onMounted(() => {
   fillChartData()
 })
 
-const store = useStore()
 
-const clientBarItems = computed(() => store.state.clients.slice(0, 3))
 
-const transactionBarItems = computed(() => store.state.history.slice(0, 3))
+const clientBarItems = computed(() => stores.state.clients.slice(0, 3))
 
-const darkMode = computed(() => store.state.darkMode)
+const transactionBarItems = computed(() => stores.state.history.slice(0, 3))
+
+const darkMode = computed(() => stores.state.darkMode)
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { getButtonColor } from '@/colors.js'
-import Icon from '../Components/Icon.vue'
+import Icon from '@/Components/Icon.vue'
 
 const props = defineProps({
   label: {

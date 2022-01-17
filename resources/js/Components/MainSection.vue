@@ -1,18 +1,19 @@
 <script setup>
 import { computed } from 'vue'
-import { useStore } from 'vuex'
+import stores from '@/store'
 
-const store = useStore()
+// const stores = useStore()
 
-const isFullScreen = computed(() => store.state.isFullScreen)
+const isFullScreen = true
 
 </script>
 
 <template>
   <section
-    class="px-0 md:px-6"
-    :class="[ isFullScreen ? 'flex h-screen items-center justify-center' : 'py-6' ]"
+    class="px-0 md:px-6 flex-none md:flex-1"
+    :class="[ isFullScreen ? 'flex h-screen items-center justify-center' : 'py-6 flex h-screen items-center justify-center' ]"
   >
     <slot />
   </section>
+  
 </template>

@@ -1,9 +1,9 @@
 <script setup>
 import { mdiCog } from '@mdi/js'
 import { computed } from 'vue'
-import { useStore } from 'vuex'
-import Icon from '../Components/Icon.vue'
-import JbButton from '../Components/JbButton.vue'
+import Icon from '@/Components/Icon.vue'
+import JbButton from '@/Components/JbButton.vue'
+import stores from '@/store'
 
 defineProps({
   icon: {
@@ -16,9 +16,8 @@ defineProps({
   }
 })
 
-const store = useStore()
 
-const darkMode = computed(() => store.state.darkMode)
+const darkMode = computed(() => stores.state.darkMode)
 </script>
 
 <template>

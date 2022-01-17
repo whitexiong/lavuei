@@ -1,11 +1,11 @@
-import router from "@/router";
 
 require('./bootstrap');
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
-import store from './store'
+import stores from './store'
 import { darkModeKey } from '@/config.js'
+import router from './router'
 
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
@@ -13,17 +13,20 @@ const appName = window.document.getElementsByTagName('title')[0]?.innerText || '
 const localStorageDarkModeValue = localStorage.getItem(darkModeKey)
 
 if ((localStorageDarkModeValue === null && window.matchMedia('(prefers-color-scheme: dark)').matches) || localStorageDarkModeValue === '1') {
-    store.dispatch('darkMode')
+    stores.dispatch('darkMode')
 }
 
+router.beforeEach(to => {
+    stores.dispatch('asideMobileToggle', false)
+    stores.dispatch('asideLgToggle', false)
+})
 
 createInertiaApp({
-    store: (store) => `${store}`,
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => require(`./Pages/${name}.vue`),
     setup({ el, app, props, plugin}) {
         return createApp({ render: () => h(app, props) })
-            .use(plugin,store, router)
+            .use(plugin,stores,router)
             .mixin({ methods: { route } })
             .mount(el);
     },

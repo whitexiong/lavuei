@@ -1,6 +1,6 @@
 <script setup>
-import { useStore } from 'vuex'
-import { computed } from 'vue'
+import {computed} from 'vue'
+import stores from '@/store'
 
 const props = defineProps({
   username: {
@@ -17,22 +17,23 @@ const props = defineProps({
   }
 })
 
-const store = useStore()
+// const store = useStore()
 
 const avatar = computed(() => props.username
-  ? `https://avatars.dicebear.com/${props.api}/${props.username.replace(/[^a-z0-9]+/i, '-')}.svg`
-  : store.state.userAvatar)
+    ? `https://avatars.dicebear.com/${props.api}/${props.username.replace(/[^a-z0-9]+/i, '-')}.svg`
+    : stores.state.userAvatar)
 
-const name = computed(() => props.username ? props.username : store.state.userName)
+const name = computed(() => props.username ? props.username : stores.state.userName)
 </script>
 
 <template>
   <div>
     <img
-      :src="avatar"
-      :alt="name"
-      class="rounded-full block h-auto w-full max-w-full"
-      :class="bg"
+        :src="$page.props.user.profile_photo_url"
+        :alt="$page.props.user.name"
+        class="rounded-full block h-auto w-full max-w-full"
+        :class="bg"
+
     >
   </div>
 </template>

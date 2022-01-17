@@ -1,13 +1,16 @@
 <template>
 
-  <app-layout title="Dashboard">
-    <template #header>
-      <h2 class="font-semisolid text-xl text-gray-800 leading-tight">
-        用户详情
-      </h2>
-    </template>
+  <nav-bar/>
 
-    <div class="py-12">
+  <div
+      class="grid grid-cols-6  flex min-h-screen bg-gray-50 py-8 flex flex-col justify-center relative  lg:py-12 dark:border-gray-50/[0.06] bg-white supports-backdrop-blur:bg-white/95 dark:bg-gray-500">
+
+    <div class="col-span-2 col-start-1">
+      <aside-menu/>
+    </div>
+
+
+    <div class="col-start-2 col-span-6">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <jet-form-section @submitted="updateProfileInformation">
 
@@ -43,8 +46,8 @@
         </jet-form-section>
       </div>
     </div>
+  </div>
 
-  </app-layout>
 </template>
 
 
@@ -57,11 +60,11 @@ import JetInputError from '@/Jetstream/InputError.vue'
 import JetLabel from '@/Jetstream/Label.vue'
 import JetActionMessage from '@/Jetstream/ActionMessage.vue'
 import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
-import AppLayout from '@/Layouts/AppLayout.vue'
+import NavBar from '@/Components/NavBar.vue'
+import AsideMenu from '@/Components/AsideMenu.vue'
 
 export default defineComponent({
   components: {
-    AppLayout,
     JetActionMessage,
     JetButton,
     JetFormSection,
@@ -69,6 +72,8 @@ export default defineComponent({
     JetInputError,
     JetLabel,
     JetSecondaryButton,
+    NavBar,
+    AsideMenu
   },
 
   props: ['user'],
