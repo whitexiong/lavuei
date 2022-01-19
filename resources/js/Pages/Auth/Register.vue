@@ -55,7 +55,7 @@
 </template>
 
 <script>
-    import { defineComponent } from 'vue'
+    import  { defineComponent } from 'vue'
     import JetAuthenticationCard from '@/Jetstream/AuthenticationCard.vue'
     import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo.vue'
     import JetButton from '@/Jetstream/Button.vue'

@@ -55,6 +55,11 @@
 
 > 一款帮助搜索文档搜索神器，其中 Tailwind CSS 也是使用了其优雅的搜索功能只需要 CTRL+K 即可进行全文档搜索
 
+-  laravel-mix 
+
+> 借助 laravel-mix 我们可以实现保存即可自动刷新浏览器，注意这需要开启 3000 端口，在 sail 中与本机对应，访问地址应该为 www.xx.xxx:3000
+
+
 ## 目录结构
 
 > 本项目采用 MVC 方式，可采用 service 层逻辑处理，后续加入存储模式,严格遵守单元测试,代码上传后采用 jenkins 持续集成。
@@ -100,7 +105,8 @@
 > 命令
 
     sail php artisan code:models --table=xxx  生成模型文件
-    
+    sail php artisan ide-helper:models  生成代码提示到模型
+    php artisan make:policy UserPolicy --model=User    创建 policy 策略
 
 > 实现功能
 
@@ -113,11 +119,9 @@
 - 权限认证
 - 评论系统
 
-生产环境
+### 生产环境部署
 
-### 创建 policy 策略
-
-    php artisan make:policy UserPolicy --model=User
+> 设想通过树莓派实现一个小型的服务器，避免了云服务器的高额费用。
 
 ## License
 

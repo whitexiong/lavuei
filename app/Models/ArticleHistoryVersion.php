@@ -35,6 +35,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|ArticleHistoryVersion whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ArticleHistoryVersion whereUserId($value)
  * @mixin \Eloquent
+ * @property-read mixed $can
+ * @property-write mixed $order_status
  */
 class ArticleHistoryVersion extends BaseModel
 {

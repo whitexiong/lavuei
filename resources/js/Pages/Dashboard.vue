@@ -1,6 +1,5 @@
 <script setup>
 import {computed, ref} from 'vue'
-import menu from '@/menu.js'
 import NavBar from '@/Components/NavBar.vue'
 import AsideMenu from '@/Components/AsideMenu.vue'
 import FooterBar from '@/Components/FooterBar.vue'
@@ -23,7 +22,7 @@ const chartData = ref(null)
 
 <template>
   <nav-bar/>
-  <aside-menu :menu="menu"/>
+  <aside-menu />
   <footer-bar/>
   <overlay
       v-show="isAsideLgActive"
